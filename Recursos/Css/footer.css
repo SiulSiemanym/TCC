@@ -1,0 +1,149 @@
+.nav-link:hover {
+    border-color: #000 !important;
+  }
+  
+footer{
+    bottom: 0%;
+    width: 100%;
+    margin-top: 3.5%;
+   
+    
+}
+
+
+#contato {
+    position: relative;
+}
+#contato::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 10px;
+    left: 0;
+    background-color: #FFF;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+#contato:hover::before{
+    
+        visibility: visible;
+        -webkit-transform: scaleX(.75);
+        transform: scaleX(.75);
+      
+}
+
+#fale-conosco {
+    position: relative;
+}
+#fale-conosco::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 10px;
+    left: 0;
+    background-color: #FFF;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+#fale-conosco:hover::before{
+    
+        visibility: visible;
+        -webkit-transform: scaleX(0.75);
+        transform: scaleX(0.75);
+      
+}
+#instagram{
+    height: 50px;
+    float: right;
+}
+#email{
+    font-size: 21px;
+    position: relative;
+    
+    
+
+}
+
+#logo1{
+    height: 70px;
+    
+}
+
+#botão{
+
+    justify-content: center;
+}
+
+
+
+.link_wrapper{
+    position: relative;
+    width: min-content;
+  
+  }
+  
+  #botao2{
+    padding: 0;
+    display: block;
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    background: #333;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 3px solid #333;
+    transition: all .35s;
+  }
+  
+  .icon{
+    width: 50px;
+    height: 50px;
+    border: 3px solid transparent;
+    position: absolute;
+    transform: rotate(45deg);
+    right: 0;
+    top: 0;
+    z-index: -1;
+    transition: all .35s;
+  }
+  
+  .icon svg{
+    width: 30px;
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    transform: rotate(-45deg);
+    fill: #2ecc71;
+    transition: all .35s;
+  }
+  
+  #botao2:hover{
+    width: 200px;
+    border: 3px solid #2ecc71;
+    background: transparent;
+    color: #2ecc71;
+  }
+  
+  #botao2:hover + .icon{
+    z-index: 2;
+    border: 3px solid #2ecc71;
+    right: -25%;
+  }
+  
+  #problemstext{
+    font-size: 21px;
+  }
+
+  

@@ -1,0 +1,49 @@
+#caixapagemento{
+    border: solid 5px #7cdb52;
+    border-radius: 15px;
+}
+
+#selectcustomizado{
+    display: inline;
+    
+}
+
+.formataçãodoida{
+    border-radius: 5px;
+    cursor: pointer;
+  
+}
+
+.texto{
+    display: none;
+    position: absolute;
+    background-color: #2b3035;
+    width: 400px;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    border-top: 5px solid #7cdb52; /* Adiciona uma borda superior */
+    border-right: 5px solid #7cdb52; /* Adiciona uma borda direita */
+    border-left: 5px solid #7cdb52; /* Adiciona uma borda esquerda */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.formataçãodoida:hover + .texto{
+    display: block;
+}
+
+#saidepertodanavbar{
+    margin-top: 40px;
+    
+}
+
+
+  
+  .pagamento-texto {
+    display: none;
+  }

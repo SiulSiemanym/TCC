@@ -1,0 +1,44 @@
+.tabela{
+    text-align: center;
+   background-color: #7cdb52 ;
+   border: 100%;
+   border-style: dotted;
+   border-color: indigo;
+}
+button{
+        margin: 0 1px;
+    
+
+}
+
+
+.botao {
+        width: 57px; /* largura do quadrado */
+        height: 50px; /* altura do quadrado */
+        cursor: pointer;
+        margin-right: 10px; /* Espaçamento entre os botões */
+    }
+    
+    .botao img {
+        width: 131%; /* A imagem ocupará todo o espaço do botão */
+        height: 100%;
+    }
+    
+    .editar {
+        background-color: #3498db; /* Cor de fundo para o botão de editar */
+    }
+    
+    .excluir {
+        background-color: #e74c3c; /* Cor de fundo para o botão de excluir */
+    }
+
+#espaco{
+
+        display: flex; /* Usar flexbox para organizar os botões em linha */
+        justify-content: space-between; /* Espaçamento uniforme entre os botões */
+}
+
+
+.botao:last-child {
+        margin-right: 0; /* Não aplicar margem à direita para o último botão */
+    }

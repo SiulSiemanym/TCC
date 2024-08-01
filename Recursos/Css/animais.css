@@ -1,0 +1,107 @@
+#verde{
+    text-decoration: underline;
+    color:#7cdb52;
+    font-weight: bold;
+}
+#branco{
+    text-decoration: underline;
+    color:white;
+    font-weight: bold;
+}
+.background-image {
+    position: fixed; /* Fixa a posição da div na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../Imagens/Inicio/fundo-branco-com-folhas-verdes-isoladas-nos-cantos-e-espaco-de-copia-no-meio_373887-273.jpg); /* Insira o caminho da sua imagem */
+    background-size: cover; /* Faz a imagem cobrir todo o espaço da div */
+    opacity: 1 ; /* Define a opacidade da imagem (valor entre 0 e 1) */
+    z-index: -1; /* Garante que a div de imagem de fundo fique atrás de outros elementos */
+  }
+  
+  #caixa{
+    border: 5px solid #7cdb52;
+    border-radius: 30px;
+    overflow: hidden;
+    height: 268px !important;
+    
+  }
+
+  #lupa{
+    height: 50px;
+    width: 50px;
+    background-color: #2b3035;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(124, 219, 82);
+    border-image: initial;
+    
+  }
+  
+  #barradepesquisa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+    
+  }
+
+  #txtBusca{
+    width: 60%;
+    height: 50px;
+    background-color: rgb(43, 48, 53);
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(124, 219, 82);
+    border-image: initial;
+    color: white;
+    outline: none;
+    
+  }
+
+  #txtBusca::placeholder{
+    color: white;
+    
+  }
+
+  #caixagrandetexto{
+    max-width: 1300px; height:auto;
+  }
+  #animaltitulopagina{
+    text-align: center;
+    font-weight: bold;
+    margin:auto;
+    background-color: #2b3035;
+    max-width: 1300px;
+  }
+
+  .listamotivos>li::marker{
+    color: #7cdb52;
+  }
+
+  .bordaverdeemcima{
+    border-top: #7cdb52 solid 6px;
+    border-left: #7cdb52 solid 6px;
+    border-right: #7cdb52 solid 6px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  .bordaverdeembaixo{
+    border-bottom: #7cdb52 solid 6px;
+    border-left: #7cdb52 solid 6px;
+    border-right: #7cdb52 solid 6px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow:hidden;
+    border-top: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+  
