@@ -5,16 +5,16 @@
 footer{
     bottom: 0%;
     width: 100%;
-    margin-top: 3.5%;
+    
    
     
 }
 
 
-#contato {
+.contato {
     position: relative;
 }
-#contato::before{
+.contato::before{
     content: "";
     position: absolute;
     width: 100%;
@@ -28,7 +28,7 @@ footer{
     -webkit-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
 }
-#contato:hover::before{
+.contato:hover::before{
     
         visibility: visible;
         -webkit-transform: scaleX(.75);
@@ -36,10 +36,10 @@ footer{
       
 }
 
-#fale-conosco {
+.faleconosco {
     position: relative;
 }
-#fale-conosco::before{
+.faleconosco::before{
     content: "";
     position: absolute;
     width: 100%;
@@ -53,18 +53,18 @@ footer{
     -webkit-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
 }
-#fale-conosco:hover::before{
+.faleconosco:hover::before{
     
         visibility: visible;
         -webkit-transform: scaleX(0.75);
         transform: scaleX(0.75);
       
 }
-#instagram{
+.instagram{
     height: 50px;
     float: right;
 }
-#email{
+.email{
     font-size: 21px;
     position: relative;
     
@@ -72,12 +72,12 @@ footer{
 
 }
 
-#logo1{
+.logo1{
     height: 70px;
     
 }
 
-#botão{
+.botão{
 
     justify-content: center;
 }
@@ -90,7 +90,7 @@ footer{
   
   }
   
-  #botao2{
+  .botao2{
     padding: 0;
     display: block;
     width: 250px;
@@ -129,20 +129,20 @@ footer{
     transition: all .35s;
   }
   
-  #botao2:hover{
+  .botao2:hover{
     width: 200px;
     border: 3px solid #2ecc71;
     background: transparent;
     color: #2ecc71;
   }
   
-  #botao2:hover + .icon{
+  .botao2:hover + .icon{
     z-index: 2;
     border: 3px solid #2ecc71;
     right: -25%;
   }
   
-  #problemstext{
+  .problemstext{
     font-size: 21px;
   }
 

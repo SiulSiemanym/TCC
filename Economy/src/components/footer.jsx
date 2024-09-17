@@ -1,6 +1,9 @@
 import { useState } from "react"
+import Estilo from "../Css/footer.module.css"
+import Logo from "../assets/Imagens/Menu/Logo.png"
+import InstagramLogo from "../assets/Imagens/Footer/Instagram.png"
 
-export default function Footer(){
+export default function Footer( margin ){
     const [Mostrarfaleconosco, setMostrarfaleconosco] = useState(false)
     return(
         <footer>
@@ -8,10 +11,8 @@ export default function Footer(){
           <div className="card-header bg-secondary ">
             <ul className="nav nav-tabs card-header-tabs">
               <li className="nav-item ">
-                <button
-                  onClick={()=>setMostrarfaleconosco(false)}
-                  id="contato"
-                  className={`nav-link ${!Mostrarfaleconosco?"active bg-dark":""}  text-light border-dark`}
+                <button onClick={()=>setMostrarfaleconosco(false)}
+                  className={`nav-link ${Estilo.contato} ${!Mostrarfaleconosco?"active bg-dark":""}  text-light border-dark`}
                   aria-current="true"
                 >
                   Contato
@@ -20,8 +21,7 @@ export default function Footer(){
               <li className="nav-item">
                 <button
                  onClick={()=>setMostrarfaleconosco(true)}
-                  id="fale-conosco"
-                  className={`nav-link ${Mostrarfaleconosco?"active bg-dark":""} text-light`}
+                  className={`nav-link ${Estilo.faleconosco} ${Mostrarfaleconosco?"active bg-dark":""} text-light`}
                 >
                   Fale Conosco
                 </button>
@@ -30,14 +30,14 @@ export default function Footer(){
           </div>
           <div className="card-body bg-dark text-light">
             {
-                !Mostrarfaleconosco&&  <div  id="contato-conteudo">
-                <img src="Recursos/Imagens/Menu/Logo.png" id="logo1" />
+                !Mostrarfaleconosco&&  <div id="contato-conteudo">
+                <img src={Logo} className={Estilo.logo1} />
                 <p>
                   <a href="#" className="card-text">
-                    <img id="instagram" src="Recursos/Imagens/Footer/Instagram.png" />
+                    <img src={InstagramLogo} className={`${Estilo.instagram}`}  />
                   </a>
                 </p>
-                <h5 className="card-text" id="email">
+                <h5 className={`card-text ${Estilo.email}`}>
                   economyarrecadadora@gmail.com
                 </h5>
                 <h5 className="card-text">Telefone: (11)96353-8521</h5>
@@ -46,7 +46,7 @@ export default function Footer(){
             }
            
             {
-                Mostrarfaleconosco&& <div  id="fale-conosco-conteudo">
+                Mostrarfaleconosco&& <div id="fale-conosco-conteudo">
                 <div className="mb-3 ">
                   <form
                     action="https://formsubmit.co/economyarrecadadora@gmail.com"
@@ -61,8 +61,8 @@ export default function Footer(){
                       </label>
                       <input
                         type="email"
-                        className="form-control"
-                        id="email"
+                        className={`form-control ${Estilo.email}`}
+                    
                         style={{ width: 610 }}
                         name="email"
                         placeholder="Exemplo: nome@dominio.com"
@@ -105,11 +105,11 @@ export default function Footer(){
                         />
                       </div>
                     </div>
-                    <div className="link_wrapper">
-                      <button type="submit" id="botao2">
+                    <div className={Estilo.link_wrapper}>
+                      <button type="submit" className={Estilo.botao2}>
                         Enviar!
                       </button>
-                      <div className="icon">
+                      <div className={Estilo.icon}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 268.832 268.832"

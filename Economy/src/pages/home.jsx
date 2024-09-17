@@ -1,10 +1,12 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import styles from "../Css/home.module.css"
 import Panda from "../assets/Imagens/Inicio/PANDAHOMOSSEXUALFDP.jpg"
 import Amazonia from "../assets/Imagens/Habitats/Amazonia.avif"
 import Girafa from "../assets/Imagens/Animais/girafa03.jpg"
-
+import Menu from "../components/menu";
+import back from "../assets/Imagens/Inicio/fundo-branco-com-folhas-verdes-isoladas-nos-cantos-e-espaco-de-copia-no-meio_373887-273.jpg"
+import styles from "../Css/home.module.css"
+import FOOOTER from "../components/footer.jsx"
 
 export default function Home(){
     return (
@@ -12,13 +14,13 @@ export default function Home(){
       <Helmet>
         <title>Página Inicial</title>
       </Helmet>
-      
-      <div className={`${styles.jorge} ${styles.posição}`}>
+      <Menu ativo={"home"} />
+      <div className={`${styles.jorge} ${styles.posição} ${styles.bodysubistituto} ${styles.backgroundimage}`} style={{ backgroundImage:`url(${back})` }}>
         <div
-          className={`card text-white ms-5 ${styles.nossomos}`}
-          style={{ backgroundColor: "#2b3035" }} // Removido !important para garantir a aplicação do estilo
+          className={`card text-white mt-5 ms-5 ${styles.nossomos}` }
+
         >
-          <div className="card-body">
+          <div className={`card-body ${styles.tamanhocarta}`}>
             <h1 className={`card-title ${styles.tamanhonossomos}`}>
               <span className={styles.branco}>Somos</span> a{" "}
               <span className={styles.verde}>Eco</span>
@@ -28,7 +30,7 @@ export default function Home(){
               Nós somos responsáveis por arrecadar dinheiro para ajudar os animais e
               as florestas do nosso país e do mundo.
             </p>
-            <a href="habitats.html" className="btn btn-secondary">
+            <a href="habitats.html" className={`btn btn-secondary ${styles.botaodohome}`}>
               Habitats
             </a>
             <a href="animal.html" className="btn btn-secondary">
@@ -37,7 +39,7 @@ export default function Home(){
           </div>
         </div>
         <div>
-          <h1 className={`mb-0 w-50 ${styles.titulo}`}>
+          <h1 className={`mb-0 w-50 mt-5 ${styles.titulo}`}>
             <span className={styles.verde}>Bem</span>{" "}
             <span className={styles.branco}>Vindo!</span>
           </h1>
@@ -113,6 +115,8 @@ export default function Home(){
           </div>
         </div>
       </div>
+    <FOOOTER />
+     
     </>
     )
 }

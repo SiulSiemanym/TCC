@@ -1,16 +1,23 @@
-.background-image {
+.backgroundimage {
     position: fixed; /* Fixa a posição da div na tela */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../assets/Imagens/Inicio/fundo-branco-com-folhas-verdes-isoladas-nos-cantos-e-espaco-de-copia-no-meio_373887-273.jpg); /* Insira o caminho da sua imagem */
     background-size: cover; /* Faz a imagem cobrir todo o espaço da div */
     opacity: 1 ; /* Define a opacidade da imagem (valor entre 0 e 1) */
-    z-index: -1; /* Garante que a div de imagem de fundo fique atrás de outros elementos */
+     /* Garante que a div de imagem de fundo fique atrás de outros elementos */
   }
   .posição{
     position: relative;
+    
+  }
+
+  .bodysubistituto{
+    display: flex;
+     flex-direction: column;
+      min-height: 100vh;
+       justify-content: space-between;
   }
   
 .branco{
@@ -45,7 +52,7 @@
     border-left: 4px solid #7cdb52;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    
+    height: 499px !important;
 
 }
 
@@ -77,24 +84,22 @@
     display: flex;
 }
 
-
-
-
-
-
+      
 .nossomos{ position:absolute;
     width: 17%;
-    height: 101%;
+    height: 551px;
     border: solid #7cdb52;
+    background-color: #2b3035 !important; 
 }
 
 .tamanhonossomos{
-    font-size: 220%;
+    font-size: 50px !important;
 }
 
 .conteudocarta{
     font-size: 150%;
     text-align: left;
+    font-size: 30px;
 }
 
 @media screen and (max-width: 1700px) {
@@ -120,4 +125,8 @@
         width: 95% !important;
     }
     
+}
+
+.botaodohome{
+    margin-right: 10px !important;
 }
