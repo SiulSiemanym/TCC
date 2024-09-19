@@ -44,11 +44,12 @@ export default function Home(){
             <span className={styles.branco}>Vindo!</span>
           </h1>
           <div
+            id="carouselExampleInterval"
             className={`carousel slide w-50 m-auto ${styles.carouselExampleInterval}`}
             data-bs-ride="carousel"
           >
             <div className="carousel-inner">
-              <div className="carousel-item active">
+              <div className="carousel-item ">
                 <a href="animal.html">
                   <img
                     src={Panda}
@@ -63,7 +64,7 @@ export default function Home(){
                   </h5>
                 </div>
               </div>
-              <div className="carousel-item">
+              <div className="carousel-item active">
                 <a href="animal.html">
                   <img
                     src={Amazonia}
@@ -115,7 +116,7 @@ export default function Home(){
           </div>
         </div>
       </div>
-    <FOOOTER />
+    <FOOOTER className={`${styles.sobesafada}`} />
      
     </>
     )

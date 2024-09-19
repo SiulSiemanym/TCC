@@ -1,6 +1,7 @@
 import menu from "../Css/menu.module.css"
 import Imagem from "../assets/Imagens/Menu/Perfil.png"
 import Logo from "../assets/Imagens/Menu/Logo.png"
+import { Link } from "react-router-dom"
 
 
 
@@ -17,15 +18,15 @@ export default function Menu({ ativo }){
             <div className="collapse navbar-collapse navbarText">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a className={`nav-link ${ativo == "home" ? " active" : ""} ${menu.navegacao}`} href="Home.html">Início</a>
+                  <Link className={`nav-link ${ativo == "home" ? " active" : ""} ${menu.navegacao}`} to={'/home'}>Início</Link>
                 </li>
         
                 <li className="nav-item">
-                  <a className={`nav-link ${ativo =="habitats" ? " active" : ""}  ${menu.navegacao}`} href="habitats.html">Habitats</a>
+                  <Link className={`nav-link ${ativo =="habitats" ? " active" : ""}  ${menu.navegacao}`} to={'/habitat'}>Habitats</Link>
                 </li>
                 
                 <li className="nav-item">
-                  <a className={`nav-link ${ativo =="animais" ? " active" : ""}  ${menu.navegacao}`} href="animal.html">Animais</a>
+                  <Link className={`nav-link ${ativo =="animais" ? " active" : ""}  ${menu.navegacao}`} to={'/animal'}>Animais</Link>
                 </li>
                 <li className="nav-item"> 
                   <a className={`nav-link ${ativo == "Sobre" ? " active" : ""}  ${menu.navegacao}`} href="sobre.html">Sobre nós</a>

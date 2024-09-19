@@ -3,10 +3,10 @@ import Estilo from "../Css/footer.module.css"
 import Logo from "../assets/Imagens/Menu/Logo.png"
 import InstagramLogo from "../assets/Imagens/Footer/Instagram.png"
 
-export default function Footer( margin ){
+export default function Footer({ className }){
     const [Mostrarfaleconosco, setMostrarfaleconosco] = useState(false)
     return(
-        <footer>
+        <footer className={className}>
         <div className="card text-left">
           <div className="card-header bg-secondary ">
             <ul className="nav nav-tabs card-header-tabs">

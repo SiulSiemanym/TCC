@@ -14,6 +14,7 @@ import CatalogAnimal from './pages/animal'
 import Footer from './components/footer'
 import styles from "./Css/home.module.css"
 
+
 function App() {
   const [count, setCount] = useState(0)
 

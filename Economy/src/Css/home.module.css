@@ -102,6 +102,10 @@
     font-size: 30px;
 }
 
+.sobesafada{
+    margin-top: -200px !important;
+}
+
 @media screen and (max-width: 1700px) {
     .jorge {
         display: flex;
