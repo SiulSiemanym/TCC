@@ -1,7 +1,9 @@
-export default function Animal({ id, image, nome, descricao }) {
+import { Link } from "react-router-dom"
+
+
+export default function Animal({ Link, id, image, nome, descricao }) {
     return(
-      <a
-      href="#.html"
+      <Link to={Link}
       style={{ textDecoration: "none", position: "relative" }}
       id={id}
     >

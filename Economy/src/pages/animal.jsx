@@ -1,76 +1,23 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import Animal from '../Css/animais.module.css';
+import back from "../assets/Imagens/Inicio/fundo-branco-com-folhas-verdes-isoladas-nos-cantos-e-espaco-de-copia-no-meio_373887-273.jpg";
+import Lupa from "../assets/Imagens/Animais/lupa.png";
 
 export default function CatalogAnimal(){
     return(
         <>
         <Helmet><title>Catálogo Animais</title></Helmet>
-        <header>
-          <nav
-            className="navbar navbar-expand-lg bg-body-tertiary  mb-5"
-            data-bs-theme="dark"
-          >
-            <div className="container-fluid">
-              <a className="navbar-brand" href="Home.html">
-                <img src="Recursos/Imagens/Menu/Logo.png" id="logo" />
-              </a>
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarText"
-                aria-controls="navbarText"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon" />
-              </button>
-              <div className="collapse navbar-collapse" id="navbarText">
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li className="nav-item">
-                    <a className="nav-link" id="navegacao" href="Home.html">
-                      Início
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" id="navegacao" href="habitats.html">
-                      Habitats
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a
-                      className="nav-link active"
-                      id="navegacao"
-                      aria-current="page"
-                      href="animal.html"
-                    >
-                      Animais
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" id="navegacao" href="sobre.html">
-                      Sobre nós
-                    </a>
-                  </li>
-                </ul>
-                <span className="navbar-text">
-                  <a href="login.html">
-                    <img id="perfil" src="Recursos/Imagens/Menu/Perfil.png" />
-                  </a>
-                </span>
-              </div>
-            </div>
-          </nav>
-        </header>
-        <div className="background-image" />
+        
+        <div style={{ backgroundImage:`url(${back})` }} />
         <div>
-          <div id="barradepesquisa" className="mb-5 ">
-            <input type="text" id="txtBusca" placeholder="Pesquisar animais..." />
-            <img src="Recursos/Imagens/Animais/lupa.png" id="lupa" />
+          <div id="barradepesquisa" className={`mb-5 ${Animal.barradepesquisa}`} >
+            <input type="text" id="txtBusca" className={`${Animal.txtBusca}`} placeholder="Pesquisar animais..." />
+            <img src={Lupa} className={`${Animal.lupa}`}  />
           </div>
           <div
             id="animal-list"
-            className="d-flex justify-content-center flex-column align-items-center"
+            className={`d-flex justify-content-center flex-column align-items-center`}
           >
             <a
               href="panda.html"
@@ -78,7 +25,7 @@ export default function CatalogAnimal(){
               id="panda"
             >
               <div
-                className="card mb-5 text-bg-dark text-left "
+                className={`card mb-5 text-bg-dark text-left ${Animal.caixa} `}
                 style={{ maxWidth: 1500, height: "auto" }}
                 id="caixa"
               >

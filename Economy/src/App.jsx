@@ -13,32 +13,15 @@ import Home from './pages/home'
 import CatalogAnimal from './pages/animal'
 import Footer from './components/footer'
 import styles from "./Css/home.module.css"
+import AppRoutes from './components/AppRoutes'
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
-
-  useEffect(() => {
-
-  }, [])
-
-
-
-  console.log("recarregou")
-
-  /*
-    state
-    criar
-    interage
-    muda o state
-    recarrega
-    recria com o novo state
-  */
   return (
     <>
  
-    <RouterProvider router={router} />
+    
   </>
 
   )

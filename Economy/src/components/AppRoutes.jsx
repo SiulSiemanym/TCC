@@ -1,31 +1,30 @@
-import { Route, Routes } from 'react-router-dom'
-import Home from '../Economy/src/pages/home'
-import Animal from '../Economy/src/pages/animal'
-import Habitat from '../Economy/src/pages/habitat'
-import UsuariosLista from '../Economy/src/pages/UsuariosLista'
-import Sobre from '../Economy/src/pages/sobre'
-import Login from '../Economy/src/pages/login'
-import Perfil from '../Economy/src/pages/perfil'
-import EditarPerfil from '../Economy/src/pages/editarperfil'
-import Pagamento from '../Economy/src/pages/pagamento'
-import Amazonia from '../Economy/src/pages/amazonia'
-import AraraAzul from '../Economy/src/pages/araraazul'
-import Girafa from '../Economy/src/pages/girafa'
-import Panda from '../Economy/src/pages/panda'
-import RinoceronteBranco from '../Economy/src/pages/rinocerontebranco'
-import Cadastro from '../Economy/src/pages/cadastro'
-import Recifes from '../Economy/src/pages/recifes'
-import Savana from '../Economy/src/pages/savana'
-import Manguezais from '../Economy/src/pages/manguezais'
+import { Route, Routes, Router } from 'react-router-dom'
 
+import CatalogAnimal from '../pages/animal'
+import Habitat from '../pages/habitat'
+import Home from '../pages/home'
+import UsuariosLista from '../pages/UsuariosLista'
+import Sobre from '../pages/sobre'
+import Login from '../pages/login'
+import Perfil from '../pages/perfil'
+import EditarPerfil from '../pages/editarperfil'
+import Pagamento from '../pages/pagamento'
+import Amazonias from '../pages/amazonia'
+import AraraAzul from '../pages/araraazul'
+import Girafa from '../pages/girafa'
+import Panda from '../pages/panda'
+import RinoceronteBranco from '../pages/rinocerontebranco'
+import Cadastro from '../pages/cadastro'
+import Recifes from '../pages/recifes'
+import Savana from '../pages/savana'
+import Manguezais from '../pages/manguezais'
 
 const AppRoutes = () => {
     return(
-    <div>
-      <Routes>
+    <Routes>
       
-        <Route path='/home' element={<Home/>} />
-        <Route path='/animal' element={<Animal /> } />
+        <Route path='/' element={<Home/>} />
+        <Route path='/animal' element={<CatalogAnimal /> } />
         <Route path='/habitat' element={<Habitat />} />
         <Route path='/usuarioslista' element={<UsuariosLista />} />
         <Route path='/sobre' element={<Sobre />} />
@@ -33,7 +32,7 @@ const AppRoutes = () => {
         <Route path='/perfil' element={<Perfil />} />
         <Route path='/editarperfil' element={<EditarPerfil />} />
         <Route path='/pagamento' element={<Pagamento />} />
-        <Route path='/amazonia' element={<Amazonia />} />
+        <Route path='/amazonia' element={<Amazonias />} />
         <Route path='/araraazul' element={<AraraAzul />} />
         <Route path='/girafa' element={<Girafa />} />
         <Route path='/panda' element={<Panda />} />
@@ -48,7 +47,6 @@ const AppRoutes = () => {
       
 
       </Routes>
-    </div>
     )
 }
 

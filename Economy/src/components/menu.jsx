@@ -18,7 +18,7 @@ export default function Menu({ ativo }){
             <div className="collapse navbar-collapse navbarText">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Link className={`nav-link ${ativo == "home" ? " active" : ""} ${menu.navegacao}`} to={'/home'}>Início</Link>
+                  <Link className={`nav-link ${ativo == "home" ? " active" : ""} ${menu.navegacao}`} to={'/'}>Início</Link>
                 </li>
         
                 <li className="nav-item">
