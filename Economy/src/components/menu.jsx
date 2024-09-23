@@ -26,7 +26,7 @@ export default function Menu({ ativo }){
                 </li>
                 
                 <li className="nav-item">
-                  <Link className={`nav-link ${ativo =="animais" ? " active" : ""}  ${menu.navegacao}`} to={'/animal'}>Animais</Link>
+                  <Link className={`nav-link ${ativo =="animais" ? " active" : ""}  ${menu.navegacao}`} to={'/animais'}>Animais</Link>
                 </li>
                 <li className="nav-item"> 
                   <a className={`nav-link ${ativo == "Sobre" ? " active" : ""}  ${menu.navegacao}`} href="sobre.html">Sobre nós</a>

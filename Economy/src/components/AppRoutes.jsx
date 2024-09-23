@@ -1,6 +1,6 @@
 import { Route, Routes, Router } from 'react-router-dom'
 
-import CatalogAnimal from '../pages/animal'
+import CatalogAnimal from '../pages/animais'
 import Habitat from '../pages/habitat'
 import Home from '../pages/home'
 import UsuariosLista from '../pages/UsuariosLista'
@@ -18,18 +18,24 @@ import Cadastro from '../pages/cadastro'
 import Recifes from '../pages/recifes'
 import Savana from '../pages/savana'
 import Manguezais from '../pages/manguezais'
+import Onca from '../pages/onca'
+import PenguinsAf from '../pages/penguimaf'
+import LobosGuara from '../pages/loboguara'
+import MataAtlantica from '../pages/atlantica'
+import AnimalPagina from '../pages/animal'
 
 const AppRoutes = () => {
     return(
     <Routes>
       
         <Route path='/' element={<Home/>} />
-        <Route path='/animal' element={<CatalogAnimal /> } />
         <Route path='/habitat' element={<Habitat />} />
         <Route path='/usuarioslista' element={<UsuariosLista />} />
         <Route path='/sobre' element={<Sobre />} />
         <Route path='/login' element={<Login />} />
         <Route path='/perfil' element={<Perfil />} />
+        <Route path='/animais/:nome' element={<AnimalPagina />} />
+        <Route path='/animais' element={<CatalogAnimal />} />
         <Route path='/editarperfil' element={<EditarPerfil />} />
         <Route path='/pagamento' element={<Pagamento />} />
         <Route path='/amazonia' element={<Amazonias />} />
@@ -41,6 +47,12 @@ const AppRoutes = () => {
         <Route path='/recifes' element={<Recifes />} />
         <Route path='/savana' element={<Savana />} />
         <Route path='/manguezais' element={<Manguezais />} />
+        <Route path='/oncapintada' element={<Onca />} />
+        <Route path='/pinguinsafricanos' element={<PenguinsAf />} />
+        <Route path='/loboguara' element={<LobosGuara />} />
+        <Route path='/atlantica' element={<MataAtlantica />} />
+
+
 
 
 
