@@ -2,7 +2,8 @@ import { Link } from "react-router-dom"
 import Am from '../Css/animais.module.css';
 
 
-export default function Animal({Metadenome1, Metadenome2, Imagem1, Imagem2, Imagem3, Populacao, Motivo, textointrodutorio}) {
+
+export default function Habitat({Metadenome1, Metadenome2, Imagem1, Imagem2, Imagem3, Extensao, Motivo, textointrodutorio}) {
 
 return(
     <>
@@ -75,7 +76,7 @@ return(
             <span className={Am.branco}>atual:</span>
           </h4>
           <p className={`card-text ps-3 ${Am.aumentarafontepeloamor}`}>
-            {Populacao}
+            {Extensao}
           </p>
           <h4 className={`card-title ps-3 ${Am.aumentarafontepeloamortitulo}`}>
             <span className={Am.verde}>Por quê temos</span>

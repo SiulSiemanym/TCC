@@ -1,7 +1,7 @@
 import { Route, Routes, Router } from 'react-router-dom'
 
 import CatalogAnimal from '../pages/animais'
-import Habitat from '../pages/habitat'
+import Habitats from '../pages/habitat'
 import Home from '../pages/home'
 import UsuariosLista from '../pages/UsuariosLista'
 import Sobre from '../pages/sobre'
@@ -23,13 +23,13 @@ import PenguinsAf from '../pages/penguimaf'
 import LobosGuara from '../pages/loboguara'
 import MataAtlantica from '../pages/atlantica'
 import AnimalPagina from '../pages/animal'
+import HabitatPagina from '../pages/habitatspagina'
 
 const AppRoutes = () => {
     return(
     <Routes>
       
         <Route path='/' element={<Home/>} />
-        <Route path='/habitat' element={<Habitat />} />
         <Route path='/usuarioslista' element={<UsuariosLista />} />
         <Route path='/sobre' element={<Sobre />} />
         <Route path='/login' element={<Login />} />
@@ -51,7 +51,9 @@ const AppRoutes = () => {
         <Route path='/pinguinsafricanos' element={<PenguinsAf />} />
         <Route path='/loboguara' element={<LobosGuara />} />
         <Route path='/atlantica' element={<MataAtlantica />} />
-
+        <Route path='/habitats/:nome' element={<HabitatPagina />} />
+        <Route path='/habitats' element={<Habitats />} />
+        
 
 
 

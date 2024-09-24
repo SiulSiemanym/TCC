@@ -6,7 +6,7 @@
     height: 100%;
     background-size: cover; /* Faz a imagem cobrir todo o espaço da div */
     opacity: 1 ; /* Define a opacidade da imagem (valor entre 0 e 1) */
-    z-index: 0 !important; /* Garante que a div de imagem de fundo fique atrás de outros elementos */
+    z-index: -1 !important; /* Garante que a div de imagem de fundo fique atrás de outros elementos */
   }
   .posição{
     position: relative;

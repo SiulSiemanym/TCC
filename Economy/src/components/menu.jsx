@@ -22,7 +22,7 @@ export default function Menu({ ativo }){
                 </li>
         
                 <li className="nav-item">
-                  <Link className={`nav-link ${ativo =="habitats" ? " active" : ""}  ${menu.navegacao}`} to={'/habitat'}>Habitats</Link>
+                  <Link className={`nav-link ${ativo =="habitats" ? " active" : ""}  ${menu.navegacao}`} to={'/habitats'}>Habitats</Link>
                 </li>
                 
                 <li className="nav-item">
@@ -33,7 +33,7 @@ export default function Menu({ ativo }){
                 </li>
               </ul>
               <span className="navbar-text">
-                <a href="login.html"><img className={menu.perfil} src={Imagem}/></a>
+                <Link to={'/cadastro'}><img className={menu.perfil} src={Imagem}/></Link>
               </span>
             </div>
           </div>
