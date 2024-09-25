@@ -78,7 +78,7 @@ return(
             {Populacao}
           </p>
           <h4 className={`card-title ps-3 ${Am.aumentarafontepeloamortitulo}`}>
-            <span className={Am.verde}>Por quê temos</span>
+            <span className={Am.verde}>Por que temos</span>
             <span className={Am.branco}> que doar dinheiro?</span>
           </h4>
           <p className={`card-text ps-3 ${Am.aumentarafontepeloamor}`}>

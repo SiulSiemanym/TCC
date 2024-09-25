@@ -1,8 +1,14 @@
 import Arara from "../assets/Imagens/Animais/araraazull.jpg"
 import Rinoceronte from "../assets/Imagens/Animais/rinoceronteeduardo.jpg"
 import Onca from "../assets/Imagens/Animais/onçapintada.jpg"
+import Onca2 from "../assets/Imagens/imagensdudu/1.png"
+import Onca3 from "../assets/Imagens/imagensdudu/2.png"
 import Pengui from "../assets/Imagens/Animais/PinguiAfricano.jpg"
+import Pengui2 from "../assets/Imagens/imagensdudu/5.png"
+import Pengui3 from "../assets/Imagens/imagensdudu/6.png"
 import Guara from "../assets/Imagens/Animais/loboguará.jpg"
+import Guara2 from "../assets/Imagens/imagensdudu/8.png"
+import Guara3 from "../assets/Imagens/imagensdudu/9.png"
 import Panda from "../assets/Imagens/Inicio/PANDAHOMOSSEXUALFDP.jpg"
 import GirafaImg from "../assets/Imagens/Animais/Giraffes_513870_1920x1080.jpg"
 import Panda2 from "../assets/Imagens/Animais/panda2.jpg"
@@ -60,7 +66,7 @@ export   const animais = [
       imagem: Onca,
       descricao:"Ajude a proteger as majestosas Onças Pintadas e seu ecossistema único! Sua doação é crucial para preservar esses magníficos felinos e garantir que continuem a reinar nas florestas. Cada contribuição é um passo importante em direção a um mundo onde as Onças Pintadas possam prosperar livremente. Junte-se a nós nesta missão vital e faça a diferença hoje.",
       categoria: "animal",    
-      Metadenome1: "Onças ", Metadenome2: "Pintadas", Imagem1: Onca, Imagem2: Onca, Imagem3: Onca, Populacao: "A população de onças-pintadas é difícil de estimar com precisão, mas acredita-se que existam entre 15.000 e 20.000 indivíduos na natureza. A espécie está classificada como 'quase ameaçada' pela União Internacional para a Conservação da Natureza (UICN) devido à perda de habitat e caça." , Motivo: "gay", textointrodutorio:"Os pinguins africanos (Spheniscus demersus), também conhecidos como pinguins do Cabo, são a única espécie de pinguim que vive naturalmente no continente africano. Eles são facilmente reconhecíveis por suas características penas pretas e brancas e sua adorável aparência, além de serem sociais, formando colônias grandes.", Motivo: "A conservação dos pinguins africanos é crucial não apenas para a espécie, mas também para a saúde dos ecossistemas marinhos. Eles são indicadores importantes da saúde do oceano, pois sua presença e bem-estar refletem as condições do habitat marinho. Além disso, a proteção dos pinguins pode impulsionar o ecoturismo, promovendo a conscientização e a conservação dos habitats costeiros. Proteger essas aves encantadoras é essencial para garantir a biodiversidade e o equilíbrio ecológico das regiões onde habitam."  
+      Metadenome1: "Onças ", Metadenome2: "Pintadas", Imagem1: Onca, Imagem2: Onca2, Imagem3: Onca3, Populacao: "A população de onças-pintadas é difícil de estimar com precisão, mas acredita-se que existam entre 15.000 e 20.000 indivíduos na natureza. A espécie está classificada como 'quase ameaçada' pela União Internacional para a Conservação da Natureza (UICN) devido à perda de habitat e caça." , Motivo: "gay", textointrodutorio:"Os pinguins africanos (Spheniscus demersus), também conhecidos como pinguins do Cabo, são a única espécie de pinguim que vive naturalmente no continente africano. Eles são facilmente reconhecíveis por suas características penas pretas e brancas e sua adorável aparência, além de serem sociais, formando colônias grandes.", Motivo: "A conservação dos pinguins africanos é crucial não apenas para a espécie, mas também para a saúde dos ecossistemas marinhos. Eles são indicadores importantes da saúde do oceano, pois sua presença e bem-estar refletem as condições do habitat marinho. Além disso, a proteção dos pinguins pode impulsionar o ecoturismo, promovendo a conscientização e a conservação dos habitats costeiros. Proteger essas aves encantadoras é essencial para garantir a biodiversidade e o equilíbrio ecológico das regiões onde habitam."  
     },
     {
       nome: "Pinguins Africanos",
@@ -68,7 +74,7 @@ export   const animais = [
       imagem: Pengui,
       descricao:"Ajude a proteger os adoráveis Pinguins Africanos e seu lar no gelado continente. Sua doação é essencial para preservar essas aves encantadoras e garantir um futuro seguro para elas. Cada contribuição nos aproxima de um mundo onde os Pinguins Africanos continuam a mergulhar, brincar e prosperar em suas colônias costeiras. Faça parte desta causa importante e faça sua doação hoje mesmo.",
       categoria: "animal",  
-      Metadenome1: "Pinguins ", Metadenome2: "Africanos", Imagem1: Pengui, Imagem2: Pengui, Imagem3: Pengui, Populacao: "A população de pinguins africanos tem enfrentado um declínio acentuado, com estimativas indicando que existem cerca de 25.000 a 30.000 indivíduos na natureza. Eles são classificados como 'ameaçados' pela União Internacional para a Conservação da Natureza (UICN), devido à perda de habitat, poluição e captura acidental em redes de pesca."
+      Metadenome1: "Pinguins ", Metadenome2: "Africanos", Imagem1: Pengui, Imagem2: Pengui2, Imagem3: Pengui3, Populacao: "A população de pinguins africanos tem enfrentado um declínio acentuado, com estimativas indicando que existem cerca de 25.000 a 30.000 indivíduos na natureza. Eles são classificados como 'ameaçados' pela União Internacional para a Conservação da Natureza (UICN), devido à perda de habitat, poluição e captura acidental em redes de pesca."
     },
     {
       nome: "Lobo Guará",
@@ -76,7 +82,7 @@ export   const animais = [
       imagem: Guara,
       descricao:"Apoie a preservação dos encantadores Lobos Guará! Sua doação é fundamental para proteger esses magníficos animais e seu ecossistema único. Cada contribuição ajuda a garantir um futuro seguro para os Lobos Guará, permitindo que eles continuem a vagar livremente por suas terras. Faça parte desta causa crucial e faça sua doação hoje para ajudar a garantir a sobrevivência dos Lobos Guará.",
       categoria: "animal",    
-      Metadenome1: "Lobo ", Metadenome2: "Guará", Imagem1: Guara, Imagem2: Guara, Imagem3: Guara, Populacao: "A população de lobos-guará é estimada em cerca de 6.000 indivíduos, mas enfrenta sérias ameaças. A espécie é classificada como 'vulnerável' pela União Internacional para a Conservação da Natureza (UICN), devido à perda de habitat, caça e atropelamentos." , Motivo: "gay", textointrodutorio:"O lobo-guará (Chrysocyon brachyurus) é o maior canídeo da América do Sul, conhecido por suas longas patas e pelagem avermelhada. Esses animais são adaptados a diversos habitats, incluindo savanas, campos e áreas abertas, e desempenham um papel crucial na cadeia alimentar.", Motivo: "Proteger os lobos-guará é fundamental para a preservação da biodiversidade dos ecossistemas em que vivem. Como predadores, eles ajudam a controlar populações de herbívoros, mantendo o equilíbrio ecológico. Além disso, os lobos-guará são símbolos da fauna brasileira e atraem a atenção para a conservação dos habitats naturais. A preservação dessa espécie é essencial para garantir a saúde dos ecossistemas e promover a coexistência harmoniosa entre humanos e vida selvagem."
+      Metadenome1: "Lobo ", Metadenome2: "Guará", Imagem1: Guara, Imagem2: Guara2, Imagem3: Guara3, Populacao: "A população de lobos-guará é estimada em cerca de 6.000 indivíduos, mas enfrenta sérias ameaças. A espécie é classificada como 'vulnerável' pela União Internacional para a Conservação da Natureza (UICN), devido à perda de habitat, caça e atropelamentos." , Motivo: "gay", textointrodutorio:"O lobo-guará (Chrysocyon brachyurus) é o maior canídeo da América do Sul, conhecido por suas longas patas e pelagem avermelhada. Esses animais são adaptados a diversos habitats, incluindo savanas, campos e áreas abertas, e desempenham um papel crucial na cadeia alimentar.", Motivo: "Proteger os lobos-guará é fundamental para a preservação da biodiversidade dos ecossistemas em que vivem. Como predadores, eles ajudam a controlar populações de herbívoros, mantendo o equilíbrio ecológico. Além disso, os lobos-guará são símbolos da fauna brasileira e atraem a atenção para a conservação dos habitats naturais. A preservação dessa espécie é essencial para garantir a saúde dos ecossistemas e promover a coexistência harmoniosa entre humanos e vida selvagem."
     },
     
     

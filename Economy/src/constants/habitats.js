@@ -1,8 +1,21 @@
 import FlorestaAmazonica from "../assets/Imagens/Habitats/Amazonia.avif"
+import FlorestaAmazonica2 from "../assets/Imagens/imagensdudu/dois.png"
+import FlorestaAmazonica3 from "../assets/Imagens/imagensdudu/tres.png"
 import Corais from "../assets/Imagens/Habitats/corais.avif"
+import Corais2 from "../assets/Imagens/imagensdudu/cinco.png"
+import Corais3 from "../assets/Imagens/imagensdudu/seis.png"
 import Manguezais from "../assets/Imagens/Habitats/manguezal01.png"
+import Manguezais2 from "../assets/Imagens/imagensdudu/oito.png"
+import Manguezais3 from "../assets/Imagens/imagensdudu/nove.png"
 import Savana from "../assets/Imagens/Habitats/savana.avif"
+import Savana2 from "../assets/Imagens/imagensdudu/dez.png"
+import Savana3 from "../assets/Imagens/imagensdudu/onze.png"
 import Atlantica from "../assets/Imagens/Habitats/atlantica.avif"
+import Atlantica2 from "../assets/Imagens/imagensdudu/treze.png"
+import Atlantica3 from "../assets/Imagens/imagensdudu/quartoze.png"
+
+
+
 
 export const habitats = [
   
@@ -16,6 +29,8 @@ export const habitats = [
       Metadenome1: "Floresta ",
       Metadenome2: "Amazônica",
       Imagem1: FlorestaAmazonica,
+      Imagem2: FlorestaAmazonica2,
+      Imagem3: FlorestaAmazonica3,
       extensao: "A Floresta Amazônica cobre aproximadamente 5,5 milhões de quilômetros quadrados, abrangendo partes de nove países, sendo o Brasil o que possui a maior parte de sua extensão.",
       Motivo:"A preservação da Floresta Amazônica é crucial para a saúde do planeta. Ela desempenha um papel fundamental na regulação do clima global, na manutenção do ciclo da água e na conservação da biodiversidade. Além disso, a Amazônia é o lar de inúmeras comunidades indígenas que dependem da floresta para sua sobrevivência e cultura. Proteger esse habitat é essencial para garantir um futuro sustentável, não apenas para a fauna e flora, mas também para as gerações humanas que dependem dos recursos naturais e dos serviços ecossistêmicos que a floresta oferece.",
       
@@ -31,8 +46,10 @@ export const habitats = [
       Metadenome1: "Recife de ",
       Metadenome2: "Corais",
       Imagem1: Corais,
+      Imagem2: Corais2,
+      Imagem3: Corais3,
       extensao: "Estima-se que os recifes de corais cubram cerca de 284.300 quilômetros quadrados em todo o mundo, concentrando-se principalmente em regiões tropicais e subtropicais, como o Grande Barreira de Coral na Austrália e os recifes do Caribe.",
-      motivo:"A preservação dos recifes de corais é essencial para a saúde dos oceanos e das comunidades que dependem deles. Eles fornecem abrigo e alimento para uma vasta gama de espécies, além de proteger as costas da erosão e atuar como barreiras naturais contra tempestades. Os recifes também são vitais para a economia, sustentando atividades como pesca e turismo. Proteger esses ecossistemas é fundamental para garantir a biodiversidade marinha e a resiliência dos oceanos frente às mudanças climáticas e outras ameaças ambientais.",
+      Motivo:"A preservação dos recifes de corais é essencial para a saúde dos oceanos e das comunidades que dependem deles. Eles fornecem abrigo e alimento para uma vasta gama de espécies, além de proteger as costas da erosão e atuar como barreiras naturais contra tempestades. Os recifes também são vitais para a economia, sustentando atividades como pesca e turismo. Proteger esses ecossistemas é fundamental para garantir a biodiversidade marinha e a resiliência dos oceanos frente às mudanças climáticas e outras ameaças ambientais.",
 
     },
     
@@ -46,8 +63,10 @@ export const habitats = [
       Metadenome1: "Mangue",
       Metadenome2: "zais",
       Imagem1: Manguezais,
+      Imagem2: Manguezais2,
+      Imagem3: Manguezais3,
       extensao: "Os manguezais cobrem aproximadamente 15 milhões de hectares em todo o mundo, distribuídos em regiões tropicais e subtropicais. No Brasil, a costa nordeste abriga a maior parte dos manguezais do país.",
-      motivo:"A preservação dos manguezais é crucial por várias razões. Eles atuam como protetores naturais contra a erosão costeira e as tempestades, filtrando poluentes e melhorando a qualidade da água. Além disso, os manguezais são habitats ricos em biodiversidade, sustentando uma variedade de espécies e servindo como fontes de alimento e recursos para comunidades locais. Proteger esses ecossistemas é vital para a conservação da biodiversidade, a mitigação das mudanças climáticas e o sustento das populações que dependem dos serviços ecossistêmicos que os manguezais oferecem.",
+      Motivo:"A preservação dos manguezais é crucial por várias razões. Eles atuam como protetores naturais contra a erosão costeira e as tempestades, filtrando poluentes e melhorando a qualidade da água. Além disso, os manguezais são habitats ricos em biodiversidade, sustentando uma variedade de espécies e servindo como fontes de alimento e recursos para comunidades locais. Proteger esses ecossistemas é vital para a conservação da biodiversidade, a mitigação das mudanças climáticas e o sustento das populações que dependem dos serviços ecossistêmicos que os manguezais oferecem.",
 
       
     },
@@ -62,8 +81,10 @@ export const habitats = [
       Metadenome1: "Sav",
       Metadenome2: "ana",
       Imagem1: Savana,
+      Imagem2: Savana2,
+      Imagem3: Savana3,
       extensao: "As savanas cobrem cerca de 20% da superfície terrestre, com extensas áreas na África, América do Sul, Austrália e na Índia. A Savana Africana, por exemplo, é uma das mais conhecidas, abrangendo países como Quênia e Tanzânia.",
-      motivo:"A preservação das savanas é fundamental para a manutenção da biodiversidade e o equilíbrio dos ecossistemas. Elas desempenham um papel crucial na regulação do clima e na proteção do solo contra a erosão. Além disso, as savanas sustentam economias locais através do turismo e da agricultura, proporcionando recursos essenciais para as comunidades. Proteger esses habitats é vital para garantir a sobrevivência de muitas espécies e o bem-estar das populações que dependem deles.",
+      Motivo:"A preservação das savanas é fundamental para a manutenção da biodiversidade e o equilíbrio dos ecossistemas. Elas desempenham um papel crucial na regulação do clima e na proteção do solo contra a erosão. Além disso, as savanas sustentam economias locais através do turismo e da agricultura, proporcionando recursos essenciais para as comunidades. Proteger esses habitats é vital para garantir a sobrevivência de muitas espécies e o bem-estar das populações que dependem deles.",
 
     },
 
@@ -77,8 +98,10 @@ export const habitats = [
       Metadenome1: "Mangue",
       Metadenome2:"zais",
       Imagem1: Atlantica,
+      Imagem2: Atlantica2,
+      Imagem3: Atlantica3,
       extensao: "Originalmente, a Mata Atlântica cobria cerca de 1,3 milhão de quilômetros quadrados, mas atualmente restam apenas cerca de 12% de sua área original devido ao desmatamento e urbanização.",
-      motivo:"A preservação da Mata Atlântica é crucial para a proteção da biodiversidade e para a manutenção dos serviços ecossistêmicos que ela oferece, como regulação do clima, controle de enchentes e purificação da água. Além disso, a Mata Atlântica é vital para as comunidades locais, que dependem de seus recursos para subsistência e cultura. Proteger esse bioma é essencial para garantir um futuro sustentável, promovendo a conservação da natureza e o bem-estar das populações que vivem em suas proximidades.",
+      Motivo:"A preservação da Mata Atlântica é crucial para a proteção da biodiversidade e para a manutenção dos serviços ecossistêmicos que ela oferece, como regulação do clima, controle de enchentes e purificação da água. Além disso, a Mata Atlântica é vital para as comunidades locais, que dependem de seus recursos para subsistência e cultura. Proteger esse bioma é essencial para garantir um futuro sustentável, promovendo a conservação da natureza e o bem-estar das populações que vivem em suas proximidades.",
 
     },
 

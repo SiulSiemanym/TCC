@@ -3,6 +3,7 @@ import Css from "../Css/cadastro.module.css"
 import back from "../assets/Imagens/Inicio/fundo-branco-com-folhas-verdes-isoladas-nos-cantos-e-espaco-de-copia-no-meio_373887-273.jpg"
 import Menu from "../components/menu"
 import Footer from "../components/footer"
+import { Link } from "react-router-dom";
 
 export default function Cadastro(){
     return(
@@ -104,12 +105,12 @@ export default function Cadastro(){
                 </div>
                 <hr className="my-4" />
                 <div className="d-grid mb-2">
-                  <a
-                    href="login.html"
+                  <Link
+                    to='/login'
                     style={{ textDecoration: "none !important" }}
                   >
                     <h5 className={Css.linknao}>Já tem uma conta? Faça Login aqui!</h5>
-                  </a>
+                  </Link>
                 </div>
               </form>
             </div>

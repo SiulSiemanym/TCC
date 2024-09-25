@@ -1,0 +1,87 @@
+
+    .btn-login {
+      font-size: 0.9rem;
+      letter-spacing: 0.05rem;
+      padding: 0.75rem 1rem;
+    }
+    
+    .btn-google {
+      color: black !important;
+      background-color: #07b33a;
+    }
+    
+    .palavracad{
+      font-weight: bold !important;
+      
+      font-size: 50px !important;
+  
+    }
+   
+    .verde{
+      color: #7cdb52;
+      text-decoration: underline;
+      font-size: 150%;
+      font-weight: bold;
+      
+    }
+    .Branco{
+      color: white;
+      text-decoration: underline;
+      font-size: 150%;
+      font-weight: bold;
+    }
+    
+    .bordinha{
+      border: solid #7cdb52 4px !important;
+      border-radius: 30px !important;
+      font-size: 0.9rem;
+      letter-spacing: 0.05rem;
+      padding: 0.75rem 1rem;
+      font-weight: bold !important;
+      width: 100%;
+     
+      
+    }
+  
+    
+    .linkcad{
+  
+   text-decoration: none;
+  
+    }
+  
+  .exampleInputEmail1{
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .exampleInputPassword1{
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .endereco{
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  
+  
+  a{
+    text-decoration: none;
+  }
+  
+  .linknao{
+    
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .linknao:hover{
+    color:#7cdb52;
+    text-decoration:underline;
+    font-weight: bold;
+    text-align: center;
+  }

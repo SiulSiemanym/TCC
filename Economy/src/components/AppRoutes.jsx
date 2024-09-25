@@ -24,6 +24,7 @@ import LobosGuara from '../pages/loboguara'
 import MataAtlantica from '../pages/atlantica'
 import AnimalPagina from '../pages/animal'
 import HabitatPagina from '../pages/habitatspagina'
+import Tabela from '../pages/tabela'
 
 const AppRoutes = () => {
     return(
@@ -53,6 +54,7 @@ const AppRoutes = () => {
         <Route path='/atlantica' element={<MataAtlantica />} />
         <Route path='/habitats/:nome' element={<HabitatPagina />} />
         <Route path='/habitats' element={<Habitats />} />
+        <Route path='/tabela' element={<Tabela />}/>
         
 
 
