@@ -33,7 +33,14 @@ export   const animais = [
       imagem: Panda,
       descricao:"Você já imaginou o mundo sem a ternura dos pandas? Esses ursos adoráveis, símbolos de conservação, precisam da nossa ajuda. Cada contribuição faz a diferença, garantindo que programas de preservação continuem protegendo seu habitat e fornecendo cuidados essenciais. Junte-se a nós para assegurar um futuro mais brilhante para os pandas e para nosso planeta. Sua doação é a chave para preservar essa espécie icônica.",
       categoria:"animal",
-      Metadenome1: "Pa", Metadenome2: "ndas", Imagem1: Panda, Imagem2: Panda2, Imagem3: Panda3, Populacao: "Estima-se que existam cerca de 1.864 pandas gigantes em seu habitat natural. Esse número é resultado de esforços de conservação, já que a espécie foi classificada como 'em perigo' e, mais recentemente, como 'vulnerável'." , textointrodutorio:"Os pandas, ou ursos-panda (Ailuropoda melanoleuca), são nativos das montanhas da China e são conhecidos por sua pelagem preta e branca característica. Eles pertencem à família dos ursos e têm uma dieta quase exclusivamente herbívora, alimentando-se principalmente de bambu.", Motivo: "Proteger os pandas é crucial não apenas para a sobrevivência da espécie, mas também para a preservação dos ecossistemas que habitam. Eles desempenham um papel importante na manutenção da biodiversidade, ajudando a promover o crescimento do bambu e, consequentemente, de outras espécies que dependem desse habitat. Além disso, a conservação dos pandas pode incentivar esforços mais amplos para proteger a flora e fauna da China."
+      Metadenome1: "Pa", 
+      Metadenome2: "ndas", 
+      Imagem1: Panda, 
+      Imagem2: Panda2, 
+      Imagem3: Panda3, 
+      Populacao: "Estima-se que existam cerca de 1.864 pandas gigantes em seu habitat natural. Esse número é resultado de esforços de conservação, já que a espécie foi classificada como 'em perigo' e, mais recentemente, como 'vulnerável'." ,
+      textointrodutorio:"Os pandas, ou ursos-panda (Ailuropoda melanoleuca), são nativos das montanhas da China e são conhecidos por sua pelagem preta e branca característica. Eles pertencem à família dos ursos e têm uma dieta quase exclusivamente herbívora, alimentando-se principalmente de bambu.", 
+      Motivo: "Proteger os pandas é crucial não apenas para a sobrevivência da espécie, mas também para a preservação dos ecossistemas que habitam. Eles desempenham um papel importante na manutenção da biodiversidade, ajudando a promover o crescimento do bambu e, consequentemente, de outras espécies que dependem desse habitat. Além disso, a conservação dos pandas pode incentivar esforços mais amplos para proteger a flora e fauna da China."
 
     },
     {

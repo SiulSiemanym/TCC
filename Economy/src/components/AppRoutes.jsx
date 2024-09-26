@@ -25,6 +25,9 @@ import MataAtlantica from '../pages/atlantica'
 import AnimalPagina from '../pages/animal'
 import HabitatPagina from '../pages/habitatspagina'
 import Usuario from '../pages/tabela'
+import Item from '../pages/tabelaitem'
+import Doacao from '../pages/tabeladoacao'
+import Catalogo from '../pages/tabelacatalogo'
 
 
 
@@ -57,6 +60,11 @@ const AppRoutes = () => {
         <Route path='/habitats/:nome' element={<HabitatPagina />} />
         <Route path='/habitats' element={<Habitats />} />
         <Route path='/tabela' element={<Usuario />}/>
+        <Route path='/item' element={<Item />}/>
+        <Route path='/doacao' element={<Doacao />}/>
+        <Route path='/catalogo' element={<Catalogo />}/>
+
+
        
         
 

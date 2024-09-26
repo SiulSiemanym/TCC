@@ -33,9 +33,7 @@ export default function Cadastro(){
                     <span className={`${Css.verde}`} style={{ fontSize: "20px !important" }}>
                       Endereço
                     </span>
-                    <span className={`${Css.Branco}`} style={{ fontSize: "20px !important" }}>
-                      de email:
-                    </span>
+                    <span className={`${Css.Branco}`} style={{ fontSize: "20px !important" }}> de email:</span>
                   </label>
                   <input
                     type="email"

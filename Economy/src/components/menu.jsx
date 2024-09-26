@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 
 
-export default function Menu({ ativo }){
+export default function Menu({ ativo,  profileImage}){
     return(
       
       <header>
@@ -33,7 +33,7 @@ export default function Menu({ ativo }){
                 </li>
               </ul>
               <span className="navbar-text">
-                <Link to={'/cadastro'}><img className={menu.perfil} src={Imagem}/></Link>
+                <Link to={'/cadastro'}><img className={menu.perfil} src={profileImage || localStorage.getItem("imagem") || Imagem } /></Link>
               </span>
             </div>
           </div>
