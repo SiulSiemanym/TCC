@@ -2,6 +2,10 @@ import { Helmet } from "react-helmet";
 import UsuarioService from "../services/UsuarioService";
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import Sidebar from "../Menu/Sidebar";
+import Menu from "../components/menu";
+
+
 
 
 const Tabela = () => {
@@ -33,10 +37,10 @@ const Tabela = () => {
         <div className="d-flex">
             <Sidebar />
             <div className="p-3 w-100">
-                <Header
+                <Menu
                     goto={'/usuario'}
                     title={'Lista de Usuários'}
-                    logo={logo}
+                    
                 />
                 <section className="m-2 p-2 shadow-lg">
                     <div className="table-wrapper">
@@ -46,8 +50,9 @@ const Tabela = () => {
                                     <th scope="col">ID</th>
                                     <th scope="col">Nome</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Acesso</th>
-                                    <th scope="col">Cadastro</th>
+                                    <th scope="col">Cpf</th>
+                                    <th scope="col">NivelAcesso</th>
+                                    <th scope="col">DataCadastro</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Abrir</th>
                                 </tr>
@@ -58,6 +63,7 @@ const Tabela = () => {
                                         <td>{usuario.id}</td>
                                         <td>{usuario.nome}</td>
                                         <td>{usuario.email}</td>
+                                        <td>{usuario.cpf}</td>
                                         <td>{usuario.nivelAcesso}</td>
                                         <td>{usuario.dataCadastro}</td>
                                         <td>{usuario.statusUsuario}</td>

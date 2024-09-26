@@ -39,8 +39,8 @@ export const habitats = [
     {
       nome: "Recifes de Corais",
       link: "recifes",
-      imagem: Corais,
-      descricao: "Os recifes de corais são como cidades subaquáticas, abrigando uma vasta gama de vida marinha e protegendo as costas da erosão. No entanto, esses ecossistemas vitais estão sob crescente ameaça devido à atividade humana. Ao doar para a preservação dos recifes de corais, você está investindo na saúde dos oceanos e na sustentabilidade de inúmeras espécies marinhas. Sua contribuição pode financiar projetos de conservação, pesquisa e educação que são essenciais para proteger esses preciosos habitats marinhos. Junte-se a nós na missão de salvar os recifes de corais e garantir um futuro sustentável para os oceanos e para nós mesmos. Doe hoje e faça a diferença!",
+      imagem: Corais2,
+      descricao: "Os recifes de corais são como cidades subaquáticas, abrigando uma vasta gama de vida marinha e protegendo as costas da erosão. No entanto, esses ecossistemas vitais estão sob crescente ameaça devido à atividade humana. Ao doar para a preservação dos recifes de corais, você está investindo na saúde dos oceanos e na sustentabilidade de inúmeras espécies marinhas. Sua contribuição pode financiar projetos de conservação, pesquisa e educação que são essenciais para proteger esses preciosos habitats marinhos. Junte-se a nós na missão de salvar os recifes de corais e garantir um futuro sustentável para os oceanos e para nós mesmos.",
       categoria: "habitat",
       textointrodutorio:"Os recifes de corais são ecossistemas marinhos formados por colônias de pequenos organismos chamados pólipos, que produzem estruturas calcárias. Esses recifes são conhecidos por sua incrível biodiversidade, abrigando aproximadamente 25% de todas as espécies marinhas, incluindo peixes, moluscos e crustáceos. Uma curiosidade é que os recifes de corais são frequentemente chamados de 'florestas tropicais do mar' devido à sua diversidade e complexidade.",
       Metadenome1: "Recife de ",

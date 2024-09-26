@@ -9,13 +9,6 @@ const findById = (id) => {
     return http.mainInstance.get(API_URL + `findById/${id}`);
 };
 
-const signup = (nome, email, password) => {
-    return http.mainInstance.post(API_URL + "signup", {
-        nome,
-        email,
-        password,
-    });
-};
 
 const signin = async (email, senha) => {
     const response = await http.mainInstance
@@ -57,22 +50,21 @@ const alterarSenha = (id, data) => {
     return http.mainInstance.put(API_URL + `alterarSenha/${id}`, formData);
 };
 
-const findByNome = nome => {
-    return http.mainInstance.get(API_URL + `findByNome?nome=${nome}`);
+const findByEmail = email => {
+    return http.mainInstance.get(API_URL + `findByNome?nome=${email}`);
 };
 
 
 const UsuarioService = {
     findAll,
     findById,
-    signup,
     signin,
     logout,
     getCurrentUser,
     create,
     update,
     alterarSenha,
-    findByNome,
+    findByEmail,
 }
 
 export default UsuarioService;
