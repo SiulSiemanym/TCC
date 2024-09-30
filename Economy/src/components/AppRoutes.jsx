@@ -59,7 +59,7 @@ const AppRoutes = () => {
         <Route path='/atlantica' element={<MataAtlantica />} />
         <Route path='/habitats/:nome' element={<HabitatPagina />} />
         <Route path='/habitats' element={<Habitats />} />
-        <Route path='/tabela' element={<Usuario />}/>
+        <Route path='/usuariotabela' element={<Usuario />}/>
         <Route path='/item' element={<Item />}/>
         <Route path='/doacao' element={<Doacao />}/>
         <Route path='/catalogo' element={<Catalogo />}/>

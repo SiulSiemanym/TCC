@@ -30,12 +30,12 @@ export default function Home(){
               Nós somos responsáveis por arrecadar dinheiro para ajudar os animais e
               as florestas do nosso país e do mundo.
             </p>
-            <a href="habitats.html" className={`btn btn-secondary ${styles.botaodohome}`}>
+            <Link to={'/habitats'} className={`btn btn-secondary ${styles.botaodohome}`}>
               Habitats
-            </a>
-            <a href="animal.html" className="btn btn-secondary">
+            </Link>
+            <Link to={'/animais'} className="btn btn-secondary">
               Animais
-            </a>
+            </Link>
           </div>
         </div>
         <div>

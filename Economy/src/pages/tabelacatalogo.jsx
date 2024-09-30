@@ -52,7 +52,7 @@ const TabelaCatalogo = () => {
                                     <th scope="col">obs</th>
                                     <th scope="col">item_id</th>
                                     <th scope="col">StatusItem</th>                                                                                             
-                                    <th scope="col">Abrir</th>
+                                    <th scope="col">Editar</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -68,7 +68,7 @@ const TabelaCatalogo = () => {
                                         <td>
                                             <button onClick={() => editar(catalogos.id)}
                                                 className="btn btn-sm btn-warning rounded">
-                                                <i className="bi bi-envelope-open"> Abrir</i>
+                                                <i className="bi bi-envelope-open"> Editar</i>
                                             </button>
                                         </td>
                                     </tr>

@@ -69,7 +69,7 @@ const TabelaDoacao = () => {
                                         <td>
                                             <button onClick={() => editar(doacoes.id)}
                                                 className="btn btn-sm btn-warning rounded">
-                                                <i className="bi bi-envelope-open"> Abrir</i>
+                                                <i className="bi bi-envelope-open"> Editar</i>
                                             </button>
                                         </td>
                                     </tr>
