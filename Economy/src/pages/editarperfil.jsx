@@ -1,11 +1,15 @@
-import { Helmet } from "react-helmet";
+    import { Helmet } from "react-helmet";
 import Css from '../Css/editarperfil.module.css';
 import Perfil from '../assets/Imagens/Menu/Perfil.png';
 import { useState, useRef } from "react";
 import Menu from '../components/menu';
 import FOOOTER from "../components/footer.jsx";
+import useForm from "../hooks/useForm.jsx";
 
 export default function EditarPerfil({ setProfileImage }) {
+    const usuarioJSON = localStorage.getItem("usuario")
+    const usuario = JSON.parse(usuarioJSON)
+    const{ mudar, valor, mudarDireto }=useForm({ nome:usuario.nome, email:usuario.email, cpf:usuario.cpf, senha:usuario.senha, foto:"" })
     const [image, setImage] = useState(null);
     const inputFile = useRef(null);
 
@@ -14,6 +18,7 @@ export default function EditarPerfil({ setProfileImage }) {
         if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
+                mudarDireto("foto", e.target.result)
                 setImage(e.target.result);
                 console.log(e.target.result)
                 localStorage.setItem("imagem", e.target.result)
@@ -21,11 +26,18 @@ export default function EditarPerfil({ setProfileImage }) {
             reader.readAsDataURL(file);
         }
     };
+   
 
     return (
         <>
             <Menu profileImage={image || Perfil} />
             <div className={`${Css.jorge}`} style={{ position: "relative" }}>
+                            <form  onSubmit={async (e) => {
+                e.preventDefault()
+                const resposta = await axios.post("http://localhost:8080/economy/usuario/create", valor)
+                localStorage.setItem("usuario", JSON.stringify(resposta.data))
+                navigate("/")
+              }}>
                 <div className={`${Css.conteudocarta}`}>
                     <div className={`${Css.carta} ${Css.aiaiborda}`} style={{ width: 300, backgroundColor: "#2b3035" }}>
                         <div className={Css.centralizar}>
@@ -49,6 +61,7 @@ export default function EditarPerfil({ setProfileImage }) {
                                 accept="image/*"
                                 style={{ display: "none" }}
                             />
+                          
                         </div>
                     </div>
                     <div className={`${Css.carta} ${Css.aiaiborda1} ${Css.apareceobotaodudu} text-white`} style={{  }}>
@@ -58,8 +71,9 @@ export default function EditarPerfil({ setProfileImage }) {
                                 <input
                                     className={`${Css.fixedcampo} ${Css.textinput} ${Css.editable}`}
                                     type="text"
-                                    defaultValue="Nome"
+                                    Value={usuario.nome}
                                     readOnly
+                                    onChange={mudar("nome")}
                                 />
                             </div>
                             <p className="mb-0">CPF:</p>
@@ -67,8 +81,9 @@ export default function EditarPerfil({ setProfileImage }) {
                                 <input
                                     className={`${Css.fixedcampo} ${Css.textinput} ${Css.editable}`}
                                     type="text"
-                                    defaultValue="CPF"
+                                    Value={usuario.cpf}
                                     readOnly
+                                    onChange={mudar("cpf")}
                                 />
                             </div>
                             <p className="mb-0">Email:</p>
@@ -76,7 +91,8 @@ export default function EditarPerfil({ setProfileImage }) {
                                 <input
                                     className={`${Css.fixedcampo} ${Css.textinput} ${Css.editable}`}
                                     type="text"
-                                    defaultValue="Email"
+                                    Value={usuario.email}
+                                    onChange={mudar("email")}
                                     readOnly
                                 />
                             </div>
@@ -86,8 +102,8 @@ export default function EditarPerfil({ setProfileImage }) {
                                     className={`${Css.fixedcampo} ${Css.textinput} ${Css.editable}`}
                                     id="passwordField"
                                     type="password"
-                                    defaultValue="Senha"
                                     readOnly
+                                    onChange={mudar("senha")}
                                 />
                             </div>
                             <button
@@ -114,6 +130,7 @@ export default function EditarPerfil({ setProfileImage }) {
                         </div>
                     </div>
                 </div>
+                </form>
             </div>
             <FOOOTER />
         </>

@@ -3,9 +3,14 @@ import Css from "../Css/cadastro.module.css"
 import back from "../assets/Imagens/Inicio/fundo-branco-com-folhas-verdes-isoladas-nos-cantos-e-espaco-de-copia-no-meio_373887-273.jpg"
 import Menu from "../components/menu"
 import Footer from "../components/footer"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useForm from "../hooks/useForm";
+import axios from "axios"
 
 export default function Cadastro(){
+  const{ mudar, valor }=useForm({ nome:"", email:"", cpf:"", senha:"" })
+  const navigate = useNavigate()
+  console.log(valor)
     return(
         <>
         <Menu ativo=''/>
@@ -27,7 +32,12 @@ export default function Cadastro(){
                 <span className={`${Css.verde}`}>Cada</span>
                 <span className={`${Css.Branco}`}>stro</span>
               </h1>
-              <form>
+              <form onSubmit={async (e) => {
+                e.preventDefault()
+                const resposta = await axios.post("http://localhost:8080/economy/usuario/create", valor)
+                localStorage.setItem("usuario", JSON.stringify(resposta.data))
+                navigate("/")
+              }}>
                 <div className="mb-3">
                   <label htmlFor="exampleInputEmail1" className="form-label">
                     <span className={`${Css.verde}`} style={{ fontSize: "20px !important" }}>
@@ -39,6 +49,8 @@ export default function Cadastro(){
                     type="email"
                     className="form-control endereco"
                     id="Email"
+                    value={valor.email}
+                    onChange={mudar("email")}
                     aria-describedby="emailHelp"
                     placeholder="Digite o seu email..."
                   />
@@ -54,6 +66,8 @@ export default function Cadastro(){
                   </label>
                   <input
                     type="password"
+                    value={valor.senha}
+                    onChange={mudar("senha")}
                     className="form-control endereco"
                     id="Senha"
                     placeholder="Digite a sua senha..."
@@ -72,6 +86,8 @@ export default function Cadastro(){
                   <input
                     type="name"
                     className="form-control endereco"
+                    value={valor.nome}
+                    onChange={mudar("nome")}
                     id="Nome"
                     placeholder="Digite o seu nome..."
                   />
@@ -89,6 +105,8 @@ export default function Cadastro(){
                   <input
                     type="text"
                     className="form-control endereco"
+                    value={valor.cpf}
+                    onChange={mudar("cpf")}
                     id="CPF"
                     placeholder="Digite o seu CPF..."
                   />

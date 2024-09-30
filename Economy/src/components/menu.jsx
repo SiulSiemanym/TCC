@@ -6,6 +6,8 @@ import { Link } from "react-router-dom"
 
 
 export default function Menu({ ativo,  profileImage}){
+  const usuarioJSON = localStorage.getItem("usuario")
+  const usuario = JSON.parse(usuarioJSON)
     return(
       
       <header>
@@ -29,9 +31,10 @@ export default function Menu({ ativo,  profileImage}){
                   <Link className={`nav-link ${ativo =="animais" ? " active" : ""}  ${menu.navegacao}`} to={'/animais'}>Animais</Link>
                 </li>
                 <li className="nav-item"> 
-                  <a className={`nav-link ${ativo == "Sobre" ? " active" : ""}  ${menu.navegacao}`} href="sobre.html">Sobre nós</a>
+                  <Link className={`nav-link ${ativo == "Sobre" ? " active" : ""}  ${menu.navegacao}`} to={'/sobre'} >Sobre nós</Link>
                 </li>
               </ul>
+              <h1>{usuario.nome}</h1>
               <span className="navbar-text">
                 <Link to={'/cadastro'}><img className={menu.perfil} src={profileImage || localStorage.getItem("imagem") || Imagem } /></Link>
               </span>

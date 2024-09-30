@@ -95,7 +95,7 @@ return(
               Doar
             </button>
           </a>
-          <a href="animal.html">
+          <Link to='/habitats'>
             <button
               type="button"
               className="btn btn-secondary"
@@ -103,7 +103,7 @@ return(
             >
               Voltar
             </button>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

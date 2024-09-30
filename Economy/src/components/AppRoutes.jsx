@@ -3,7 +3,6 @@ import { Route, Routes, Router } from 'react-router-dom'
 import CatalogAnimal from '../pages/animais'
 import Habitats from '../pages/habitat'
 import Home from '../pages/home'
-import UsuariosLista from '../pages/UsuariosLista'
 import Sobre from '../pages/sobre'
 import Login from '../pages/login'
 import Perfil from '../pages/perfil'
@@ -28,7 +27,7 @@ import Usuario from '../pages/tabela'
 import Item from '../pages/tabelaitem'
 import Doacao from '../pages/tabeladoacao'
 import Catalogo from '../pages/tabelacatalogo'
-
+import EsqueciSenha from '../pages/esquecisenha'
 
 
 const AppRoutes = () => {
@@ -36,7 +35,6 @@ const AppRoutes = () => {
     <Routes>
       
         <Route path='/' element={<Home/>} />
-        <Route path='/usuarioslista' element={<UsuariosLista />} />
         <Route path='/sobre' element={<Sobre />} />
         <Route path='/login' element={<Login />} />
         <Route path='/perfil' element={<Perfil />} />
@@ -63,6 +61,7 @@ const AppRoutes = () => {
         <Route path='/item' element={<Item />}/>
         <Route path='/doacao' element={<Doacao />}/>
         <Route path='/catalogo' element={<Catalogo />}/>
+        <Route path='/esquecisenha' element={<EsqueciSenha />}/>
 
 
        

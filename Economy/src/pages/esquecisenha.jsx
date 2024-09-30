@@ -1,7 +1,8 @@
+
 import { Helmet } from "react-helmet";
 
 
-export default function UsuariosLista(){
+export default function EsqueciSenha(){
     return(
         <>
         </>
