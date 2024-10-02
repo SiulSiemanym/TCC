@@ -51,6 +51,7 @@ const Tabela = () => {
                                     <th scope="col">Nome</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Cpf</th>
+                                    <th scope="col">Foto</th>
                                     <th scope="col">NivelAcesso</th>
                                     <th scope="col">DataCadastro</th>
                                     <th scope="col">Status</th>
@@ -64,6 +65,7 @@ const Tabela = () => {
                                         <td>{usuario.nome}</td>
                                         <td>{usuario.email}</td>
                                         <td>{usuario.cpf}</td>
+                                        <td>{usuario.foto}</td>
                                         <td>{usuario.nivelAcesso}</td>
                                         <td>{usuario.dataCadastro}</td>
                                         <td>{usuario.statusUsuario}</td>

@@ -34,7 +34,13 @@ const create = data => {
     const formData = new FormData();
     formData.append('nome', data.nome);
     formData.append('email', data.email);
+    formData.append('senha', data.senha);
+    formData.append('cpf', data.cpf);
+    formData.append('foto', data.foto);
     formData.append('nivelAcesso', data.nivelAcesso);
+    formData.append('DataCadastro', data.DataCadastro);
+    formData.append('statusUsuario', data.statusUsuario);
+
 
     return http.mainInstance.post(API_URL + "create", formData);
 };
@@ -53,7 +59,19 @@ const alterarSenha = (id, data) => {
 const findByEmail = email => {
     return http.mainInstance.get(API_URL + `findByNome?nome=${email}`);
 };
+const updateUser = (id, data) => {
+    const formData = new FormData();
+    formData.append('nome', data.nome);
+    formData.append('email', data.email);
+    formData.append('senha', data.senha);
+    formData.append('cpf', data.cpf);
+    formData.append('foto', data.foto);
+    formData.append('nivelAcesso', data.nivelAcesso);
+    formData.append('DataCadastro', data.DataCadastro);
+    formData.append('statusUsuario', data.statusUsuario);
 
+    return http.mainInstance.put(API_URL + `update/${id}`, formData);
+};
 
 const UsuarioService = {
     findAll,
@@ -61,10 +79,11 @@ const UsuarioService = {
     signin,
     logout,
     getCurrentUser,
-    create,
+    create, 
     update,
     alterarSenha,
     findByEmail,
-}
+    updateUser,
+};
 
 export default UsuarioService;

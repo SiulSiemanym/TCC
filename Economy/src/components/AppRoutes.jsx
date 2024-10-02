@@ -28,6 +28,8 @@ import Item from '../pages/tabelaitem'
 import Doacao from '../pages/tabeladoacao'
 import Catalogo from '../pages/tabelacatalogo'
 import EsqueciSenha from '../pages/esquecisenha'
+import EditarUsuario from '../pages/editarusuario'
+
 
 
 const AppRoutes = () => {
@@ -62,6 +64,8 @@ const AppRoutes = () => {
         <Route path='/doacao' element={<Doacao />}/>
         <Route path='/catalogo' element={<Catalogo />}/>
         <Route path='/esquecisenha' element={<EsqueciSenha />}/>
+        <Route path='/editarusuario' element={<EditarUsuario />}/>
+
 
 
        

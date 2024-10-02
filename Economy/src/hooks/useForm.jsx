@@ -3,6 +3,7 @@ import { useReducer } from "react"
 // Isso é o que permite a criação de valores pro banco, nas páginas de criação (as que tem um nome de entidade e Novo na frente) 
 
 function reducer(state, action) {
+    console.log({...state, [action.campo]: action.valor})
     switch (action.tipo) {
         case "mudar":
             return {...state, [action.campo]: action.valor}

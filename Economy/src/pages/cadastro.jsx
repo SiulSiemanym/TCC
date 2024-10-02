@@ -4,7 +4,7 @@ import back from "../assets/Imagens/Inicio/fundo-branco-com-folhas-verdes-isolad
 import Menu from "../components/menu"
 import Footer from "../components/footer"
 import { Link, useNavigate } from "react-router-dom";
-import useForm from "../hooks/useForm";
+import useForm from "../hooks/useForm.jsx";
 import axios from "axios"
 
 export default function Cadastro(){

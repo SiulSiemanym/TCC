@@ -50,13 +50,13 @@ export default function Home(){
           >
             <div className="carousel-inner">
               <div className="carousel-item ">
-                <a href="animal.html">
+                <Link to={'/animais'}>
                   <img
                     src={Panda}
                     className={`d-block w-100 mx-auto ${styles.animaishome}`}
                     alt="Animais"
                   />
-                </a>
+                </Link>
                 <div className="carousel-caption d-none d-md-block">
                   <h4>Animais que ajudamos!</h4>
                   <h5>
@@ -65,13 +65,13 @@ export default function Home(){
                 </div>
               </div>
               <div className="carousel-item active">
-                <a href="animal.html">
+                <Link to={'/habitats'}>
                   <img
                     src={Amazonia}
                     className={`d-block w-100 mx-auto ${styles.animaishome}`}
                     alt="Amazonia"
                   />
-                </a>
+                </Link>
                 <div className="carousel-caption d-none d-md-block">
                   <h4>Habitats que ajudamos!</h4>
                   <h5>
@@ -80,13 +80,13 @@ export default function Home(){
                 </div>
               </div>
               <div className="carousel-item">
-                <a href="animal.html">
+                <Link to={'/animais'}>
                   <img
                     src={Girafa}
                     className={`d-block w-100 mx-auto ${styles.animaishome}`}
                     alt="Girafas"
                   />
-                </a>
+                </Link>
                 <div className="carousel-caption d-none d-md-block">
                   <h4>Animais que ajudamos!</h4>
                   <h5>
