@@ -32,6 +32,7 @@ import EditarUsuario from '../pages/editarusuario'
 import EditarDoacao from '../pages/editardoacao'
 import EditarItem from '../pages/editaritem'
 import EditarCatalogo from '../pages/editarcatalogo'
+import ItemTabela from '../pages/tabelaitem'
 
 
 
@@ -64,6 +65,7 @@ const AppRoutes = () => {
         <Route path='/habitats/:nome' element={<HabitatPagina />} />
         <Route path='/habitats' element={<Habitats />} />
         <Route path='/usuariotabela' element={<Usuario />}/>
+        <Route path='/itemtabela' element={<ItemTabela />}/>
         <Route path='/item' element={<Item />}/>
         <Route path='/doacao' element={<Doacao />}/>
         <Route path='/catalogo' element={<Catalogo />}/>
