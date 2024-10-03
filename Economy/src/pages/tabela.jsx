@@ -13,7 +13,7 @@ const Tabela = () => {
     const navigate = useNavigate();
 
     const goTo = () => {
-        navigate('/usuarioeditar')
+        navigate('/usuarioeditar/')
     }
 
     const [usuarios, setUsuarios] = useState([]);
@@ -31,6 +31,7 @@ const Tabela = () => {
 
     const editar = (id) => {
         navigate(`/usuarioeditar/` + id)
+        
     }
 
     return (
