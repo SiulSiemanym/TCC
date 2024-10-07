@@ -4,63 +4,37 @@ import FOOOTER from '../components/footer';
 import CSS from "../Css/esquecisenha.module.css";  
 import UsuarioService from "../services/UsuarioService"; 
 import { useNavigate, useParams } from "react-router-dom";
+import useForm from '../hooks/useForm';
 
 const EditarUsuario = () => {
-    const navigate = useNavigate();
-    const { userId } = useParams(); // Pega o ID do usuário da URL
-    const [user, setUser] = useState({
-        id: '',
-        nome: '',
-        email: '',
-        cpf: '',
-        DataCadastro: '', 
-        nivelAcesso: '',
-        statusUsuario: '',
-    });
-    const [mensagem, setMensagem] = useState('');
+    const { id } = useParams(); // Pegando o id da URL
+    const [usuario, setUsuario] = useState(true);
+
 
     useEffect(() => {
-        const fetchUser = async () => {
-            try {
-                const data = await UsuarioService.findById(id);
-                setUser(data);
-            } catch (error) {
-                setMensagem('Erro ao buscar usuário.');
-            }
-        };
+        UsuarioService.findById(id) // Chame a API para buscar o usuário pelo id
+            .then(response => {
+                setUsuario(response.data); // Atualiza o estado com os dados do usuário
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, [id]); // Dependência do id para refazer a requisição caso o id mude
 
-        fetchUser();
-    }, [userId]);
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setUser({ ...user, [name]: value });
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            await UsuarioService.update(userId, user);
-            setMensagem('Usuário atualizado com sucesso!');
-            navigate('/usuarios'); // Redireciona para a lista de usuários ou outra página
-        } catch (error) {
-            setMensagem('Erro ao atualizar usuário.');
-        }
-    };
 
     return (
         <>
             <Menu />
             <div className="d-flex">
                 <section className="m-2 p-3 shadow-lg">
-                    <form className="row g-3" onSubmit={handleSubmit}>
+                    <form className="row g-3" >
                         <div className="col-md-3">
                             <label htmlFor="inputId" className="form-label">ID:</label>
                             <input
                                 type="text"
                                 className="form-control"
                                 id="inputId"
-                                value={user.id}
+                                value={usuario.id}
                                 readOnly
                             />
                         </div>
@@ -71,8 +45,9 @@ const EditarUsuario = () => {
                                 className="form-control"
                                 id="inputNome"
                                 name="nome"
-                                value={user.nome}
-                                onChange={handleChange}
+                                value={usuario.nome}
+                             
+                                
                             />
                         </div>
                         <div className="col-md-3">
@@ -81,7 +56,7 @@ const EditarUsuario = () => {
                                 type="text"
                                 className="form-control"
                                 id="inputData"
-                                value={user.DataCadastro}
+                                value={usuario.dataCadastro}
                                 readOnly
                             />
                         </div>
@@ -92,8 +67,8 @@ const EditarUsuario = () => {
                                 className="form-control"
                                 id="inputEmail4"
                                 name="email"
-                                value={user.email}
-                                onChange={handleChange}
+                                value={usuario.email}
+                                
                             />
                         </div>
                         <div className="col-md-3">
@@ -102,12 +77,12 @@ const EditarUsuario = () => {
                                 id="inputAcesso"
                                 className="form-select"
                                 name="acesso"
-                                value={user.nivelAcesso}
-                                onChange={handleChange}
+                                value={usuario.nivelAcesso}
+                             
                             >
                                 <option value="">Nível de Acesso</option>
                                 <option value="admin">Admin</option>
-                                <option value="user">Usuário</option>
+                                <option value="usuario">Usuário</option>
                                 
                             </select>
                         </div>
@@ -117,8 +92,8 @@ const EditarUsuario = () => {
                                 type="text"
                                 className="form-control"
                                 id="inputStatus"
-                                value={user.statusUsuario}
-                                readOnly
+                                value={usuario.statusUsuario}
+                           
                             />
                         </div>
                         <div className="col-12 d-flex justify-content-between">
@@ -133,7 +108,7 @@ const EditarUsuario = () => {
                             </button>
                         </div>
                     </form>
-                    {mensagem && <p className="mt-2">{mensagem}</p>}
+                   
                 </section>
             </div>
             <FOOOTER className={`${CSS.alinhasafada}`} />

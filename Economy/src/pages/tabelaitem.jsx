@@ -5,9 +5,6 @@ import Sidebar from "../Menu/Sidebar";
 import Menu from "../components/menu";
 import ItemService from "../services/ItemService";
 
-
-
-
 const TabelaItem = () => {
 
     const navigate = useNavigate();
@@ -30,7 +27,7 @@ const TabelaItem = () => {
     }, []);
 
     const editar = (id) => {
-        navigate(`/itemeditar/` + id)
+        navigate(`/itemeditar/${id}`); 
     }
 
     return (
@@ -40,7 +37,6 @@ const TabelaItem = () => {
                 <Menu
                     goto={'/usuario'}
                     title={'Lista de Itens'}
-                    
                 />
                 <section className="m-2 p-2 shadow-lg">
                     <div className="table-wrapper">
@@ -82,7 +78,7 @@ const TabelaItem = () => {
                                         <td>{item.metadenome2}</td>
                                         <td>{item.statusItem}</td>
                                         <td>
-                                            <button onClick={() => editar(itens.id)}
+                                            <button onClick={() => editar(item.id)} 
                                                 className="btn btn-sm btn-warning rounded">
                                                 <i className="bi bi-envelope-open"> Editar</i>
                                             </button>
@@ -98,6 +94,4 @@ const TabelaItem = () => {
     )
 }
 
-export default TabelaItem
-
-
+export default TabelaItem;

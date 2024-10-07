@@ -75,7 +75,7 @@ const AppRoutes = () => {
         <Route path='/doacao' element={<Doacao />}/>
         <Route path='/catalogo' element={<Catalogo />}/>
         <Route path='/esquecisenha' element={<EsqueciSenha />}/>
-        <Route path='/editarusuario'  element={<EditarUsuario />}/>
+        <Route path="/editarusuario/:id" element={<EditarUsuario />} />
         <Route path='/editardoacao'  element={<EditarDoacao />}/>
         <Route path='/editaritem'  element={<EditarItem />}/>
         <Route path='/editarcatalogo'  element={<EditarCatalogo />}/>
