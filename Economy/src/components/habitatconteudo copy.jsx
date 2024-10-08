@@ -86,7 +86,7 @@ return(
             {Motivo}
           </p>
           <br />
-          <a href="pagamento.html">
+          <Link to='/pagamento'>
             <button
               type="button"
               className="btn btn-secondary"
@@ -94,7 +94,7 @@ return(
             >
               Doar
             </button>
-          </a>
+          </Link>
           <Link to='/habitats'>
             <button
               type="button"

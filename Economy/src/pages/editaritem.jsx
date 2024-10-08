@@ -5,64 +5,31 @@ import CSS from "../Css/esquecisenha.module.css";
 import ItemService from "../services/ItemService"; 
 import { useNavigate, useParams } from "react-router-dom";
 
-const EditarUsuario = () => {
-    const navigate = useNavigate();
-    const { itemId } = useParams(); // Pega o ID do usuário da URL
-    const [item, setItem] = useState({
-        id: '',
-        categoria: '',
-        nome: '',
-        descricao: '',
-        textointrodutorio: '', 
-        imagem: '',
-        imagem1: '',
-        imagem2: '',
-        imagem3: '',
-        populacao: '',
-        motivo: '',
-        metadenome1: '',
-        metadenome2: '',
-        statusItem: '',
+const EditarItem = () => {
 
-
-    });
-    const [mensagem, setMensagem] = useState('');
-
-    useEffect(() => {
-        const fetchitem = async () => {
-            try {
-                const data = await ItemService.findById(id);
-                setItem(data);
-            } catch (error) {
-                setMensagem('Erro ao buscar Item.');
-            }
-        };
-
-        fetchitem();
-    }, [itemId]);
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setItem({ ...item, [name]: value });
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            await UsuarioService.update(itemId, item);
-            setMensagem('Item atualizado com sucesso!');
-            navigate('/usuarios');
-        } catch (error) {
-            setMensagem('Erro ao atualizar item.');
-        }
-    };
-
+        const { id } = useParams(); // Pegando o id da URL
+        const [item, setItem] = useState(true);
+    
+    
+        useEffect(() => {
+           ItemService.findById(id) // Chame a API para buscar o usuário pelo id
+                .then(response => {
+                    setItem(response.data); // Atualiza o estado com os dados do usuário
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [id]); // Dependência do id para refazer a requisição caso o id mude
+    
+    
+    
     return (
         <>
+                   <Helmet><title>Editar Item</title></Helmet>
             <Menu />
             <div className="d-flex">
                 <section className="m-2 p-3 shadow-lg">
-                    <form className="row g-3" onSubmit={handleSubmit}>
+                    <form className="row g-3" >
                         <div className="col-md-3">
                             <label htmlFor="inputId" className="form-label">ID:</label>
                             <input
@@ -81,7 +48,7 @@ const EditarUsuario = () => {
                                 id="inputValor"
                                 name="nome"
                                 value={item.categoria}
-                                onChange={handleChange}
+                               
                             />
                         </div>
                         <div className="col-md-3">
@@ -97,12 +64,12 @@ const EditarUsuario = () => {
                         <div className="col-md-6">
                             <label htmlFor="inputDescricao" className="form-label">descricao:</label>
                             <input
-                                type="email"
+                                type="text"
                                 className="form-control"
                                 id="inputEmail4"
                                 name="obs"
                                 value={item.descricao}
-                                onChange={handleChange}
+                              
                             />
                         </div>
                         <div className="col-md-3">
@@ -113,7 +80,7 @@ const EditarUsuario = () => {
                                 className="form-control"
                                 name="usuario_id"
                                 value={item.textointrodutorio}
-                                onChange={handleChange}
+                            
                             />
                                
                             
@@ -227,12 +194,11 @@ const EditarUsuario = () => {
                             </button>
                         </div>
                     </form>
-                    {mensagem && <p className="mt-2">{mensagem}</p>}
                 </section>
             </div>
             <FOOOTER className={`${CSS.alinhasafada}`} />
         </>
     );
-};
+    };
 
-export default EditarUsuario;
+export default EditarItem;

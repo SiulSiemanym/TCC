@@ -1,0 +1,20 @@
+.backgroundimage {
+    position: fixed; /* Fixa a imagem na tela */
+    top: 0;
+    left: 0;
+    width: 100%; /* Largura total da tela */
+    height: 100%; /* Altura total da tela */
+   
+    background-size: cover; /* A imagem cobre todo o contêiner */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* A imagem fica fixa ao fundo */
+    background-repeat: no-repeat;
+    z-index: -1; /* Coloca a imagem atrás de outros elementos */
+  }
+  
+  .content {
+    position: relative; /* Permite que o conteúdo fique acima da imagem */
+    z-index: 1; /* Garante que o conteúdo fique acima da imagem */
+    padding: 20px; /* Espaçamento interno para o conteúdo */
+ /* Cor do texto */
+  }

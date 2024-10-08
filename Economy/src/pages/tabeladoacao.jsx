@@ -13,16 +13,16 @@ const TabelaDoacao = () => {
     const navigate = useNavigate();
 
     const goTo = () => {
-        navigate('/doacaoeditar')
+        navigate('/editardoacao/')
     }
 
-    const [doacoes, setDoacoes] = useState([]);
+    const [doacao, setDoacao] = useState([]);
 
     useEffect(() => {
-        DoacaoService.findAll().then(
+       DoacaoService.findAll().then(
             (response) => {
-                const doacoes = response.data;
-                setDoacoes(doacoes);
+                const doacao = response.data;
+                setDoacao(doacao);
             }
         ).catch((error) => {
             console.log(error);
@@ -30,11 +30,13 @@ const TabelaDoacao = () => {
     }, []);
 
     const editar = (id) => {
-        navigate(`/doacaoeditar/` + id)
+        navigate(`/editardoacao/${id}`)
     }
 
     return (
-        <div className="d-flex">
+       <>
+           <Helmet><title>Tabela de Doações</title></Helmet>
+       <div className="d-flex">
             <Sidebar />
             <div className="p-3 w-100">
                 <Menu
@@ -57,7 +59,7 @@ const TabelaDoacao = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {doacoes?.map((doacao) => (
+                                {doacao?.map((doacao) => (
                                     <tr className="" key={doacao.id}>
                                         <td>{doacao.id}</td>
                                         <td>{doacao.dataCadastro}</td>
@@ -67,7 +69,7 @@ const TabelaDoacao = () => {
                                         <td>{doacao.statusDoacao}</td>
                                        
                                         <td>
-                                            <button onClick={() => editar(doacoes.id)}
+                                            <button onClick={() => editar(doacao.id)}
                                                 className="btn btn-sm btn-warning rounded">
                                                 <i className="bi bi-envelope-open"> Editar</i>
                                             </button>
@@ -80,6 +82,7 @@ const TabelaDoacao = () => {
                 </section>
             </div>
         </div>
+        </>
     )
 }
 

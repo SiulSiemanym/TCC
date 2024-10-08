@@ -15,7 +15,7 @@ import Panda from '../pages/panda'
 import RinoceronteBranco from '../pages/rinocerontebranco'
 import Cadastro from '../pages/cadastro'
 import Recifes from '../pages/recifes'
-import Savana from '../pages/savana'
+
 import Manguezais from '../pages/manguezais'
 import Onca from '../pages/onca'
 import PenguinsAf from '../pages/penguimaf'
@@ -59,7 +59,7 @@ const AppRoutes = () => {
         <Route path='/rinocerontebranco' element={<RinoceronteBranco />} />
         <Route path='/cadastro' element={<Cadastro />} />
         <Route path='/recifes' element={<Recifes />} />
-        <Route path='/savana' element={<Savana />} />
+       
         <Route path='/manguezais' element={<Manguezais />} />
         <Route path='/oncapintada' element={<Onca />} />
         <Route path='/pinguinsafricanos' element={<PenguinsAf />} />
@@ -76,9 +76,9 @@ const AppRoutes = () => {
         <Route path='/catalogo' element={<Catalogo />}/>
         <Route path='/esquecisenha' element={<EsqueciSenha />}/>
         <Route path="/editarusuario/:id" element={<EditarUsuario />} />
-        <Route path='/editardoacao'  element={<EditarDoacao />}/>
-        <Route path='/editaritem'  element={<EditarItem />}/>
-        <Route path='/editarcatalogo'  element={<EditarCatalogo />}/>
+        <Route path='/editardoacao/:id'  element={<EditarDoacao />}/>
+        <Route path='/editaritem/:id'  element={<EditarItem />}/>
+        <Route path='/editarcatalogo/:id'  element={<EditarCatalogo />}/>
 
 
 

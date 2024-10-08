@@ -6,16 +6,20 @@ import Girafa from "../assets/Imagens/Animais/girafa03.jpg"
 import Menu from "../components/menu";
 import back from "../assets/Imagens/Inicio/fundo-branco-com-folhas-verdes-isoladas-nos-cantos-e-espaco-de-copia-no-meio_373887-273.jpg"
 import styles from "../Css/home.module.css"
+import Fundo from "../components/fundo.jsx"
 import FOOOTER from "../components/footer.jsx"
 
 export default function Home(){
     return (
       <>
+      
       <Helmet>
         <title>Página Inicial</title>
       </Helmet>
+      <Fundo>
       <Menu ativo={"home"} />
-      <div className={`${styles.jorge} ${styles.posição} ${styles.bodysubistituto} ${styles.backgroundimage}`} style={{ backgroundImage:`url(${back})` }}>
+    
+      <div className={`${styles.jorge} ${styles.posição} ${styles.bodysubistituto}`} >
         <div
           className={`card text-white mt-5 ms-5 ${styles.nossomos}` }
 
@@ -116,8 +120,9 @@ export default function Home(){
           </div>
         </div>
       </div>
+    
     <FOOOTER className={`${styles.sobesafada}`} />
-     
+    </Fundo>
     </>
     )
 }

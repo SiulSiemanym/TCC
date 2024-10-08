@@ -7,7 +7,7 @@ import FOOOTER from "../components/footer.jsx";
 import useForm from "../hooks/useForm.jsx";
 import axios from "axios";
 import useRequisitar from "../hooks/useRequisitar.jsx";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, } from "react-router-dom";
 
 export default function EditarPerfil({ setProfileImage }) {
     const usuarioJSON = localStorage.getItem("usuario");
@@ -18,7 +18,6 @@ export default function EditarPerfil({ setProfileImage }) {
     const inputFile = useRef(null);
     const navigate = useNavigate();
     const [editando, setEditando] = useState(true);
-
     // Atualiza a imagem quando usuarioDados muda (ou seja, quando o componente é montado)
     useEffect(() => {
         if (usuarioDados) {
@@ -32,16 +31,20 @@ export default function EditarPerfil({ setProfileImage }) {
             const reader = new FileReader();
             reader.onload = async function (e) {
                 const base64Image = e.target.result;
+                
                 try {
                     const response = await axios.post("http://localhost:8080/economy/usuario/alterarFoto", {
                         email: usuario.email,
                         foto: base64Image
                     });
 
-                    // Atualizar imagem no menu
-                    setProfileImage(base64Image); // Atualiza no Menu
+                    console.log(response)
 
-                    console.log('Imagem atualizada com sucesso');
+                    // Atualizar imagem no menu
+                    setImage(base64Image); // Atualiza no Menu
+
+                    // console.log('Imagem atualizada com sucesso');
+                    navigate(0)
                 } catch (error) {
                     console.error("Erro ao enviar a imagem", error);
                 }
@@ -57,13 +60,17 @@ export default function EditarPerfil({ setProfileImage }) {
 
     return (
         <>
+                    <Helmet><title>Editar Perfil</title></Helmet>
+
             <Menu profileImage={image || Perfil} />
             <div className={`${Css.jorge}`} style={{ position: "relative" }}>
                 <form onSubmit={async (e) => {
                     e.preventDefault();
-                    const resposta = await axios.post("http://localhost:8080/economy/usuario/alterar", { ...usuario, ...valor });
+                    console.log({ ...usuario, ...valor }.foto == image)
+                    console.log({ ...usuario, ...valor }.foto)
+                    const resposta = await axios.post("http://localhost:8080/economy/usuario/alterar", { ...usuarioDados, ...valor });
                     localStorage.setItem("usuario", JSON.stringify(resposta.data));
-                    navigate("/");
+                    navigate(0);
                 }}>
                     <div className={`${Css.conteudocarta}`}>
                         <div className={`${Css.carta} ${Css.aiaiborda}`} style={{ width: 300, backgroundColor: "#2b3035" }}>

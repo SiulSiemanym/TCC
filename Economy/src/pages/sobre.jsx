@@ -9,7 +9,7 @@ import Menu from "../components/menu";
 export default function Sobre(){
     return(
         <>
-        
+                <Helmet><title>Sobre Nós</title></Helmet>
             <Menu ativo={"Sobre"}/>
   <section  
 

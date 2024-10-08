@@ -5,54 +5,31 @@ import CSS from "../Css/esquecisenha.module.css";
 import DoacaoService from "../services/DoacaoService"; 
 import { useNavigate, useParams } from "react-router-dom";
 
-const EditarUsuario = () => {
-    const navigate = useNavigate();
-    const { doacaoId } = useParams(); // Pega o ID do usuário da URL
-    const [doacao, setDoacao] = useState({
-        id: '',
-        DataCadastro: '',
-        obs: '',
-        valor: '',
-        usuario_id: '', 
-        statusDoacao: '',
-    });
-    const [mensagem, setMensagem] = useState('');
+
+const EditarDoacao = () => {
+
+    const { id } = useParams(); // Pegando o id da URL
+    const [doacao, setDoacao] = useState(true);
+
 
     useEffect(() => {
-        const fetchdoacao = async () => {
-            try {
-                const data = await DoacaoService.findById(id);
-                setDoacao(data);
-            } catch (error) {
-                setMensagem('Erro ao buscar Doação Efetuada.');
-            }
-        };
-
-        fetchdoacao();
-    }, [doacaoId]);
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setDoacao({ ...doacao, [name]: value });
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            await UsuarioService.update(doacaoId, doacao);
-            setMensagem('Doação atualizada com sucesso!');
-            navigate('/usuarios');
-        } catch (error) {
-            setMensagem('Erro ao atualizar doação.');
-        }
-    };
+       DoacaoService.findById(id) // Chame a API para buscar o usuário pelo id
+            .then(response => {
+                setDoacao(response.data); // Atualiza o estado com os dados do usuário
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, [id]); // Dependência do id para refazer a requisição caso o id mude
 
     return (
         <>
+                   <Helmet><title>Editar Doação</title></Helmet>
+
             <Menu />
             <div className="d-flex">
                 <section className="m-2 p-3 shadow-lg">
-                    <form className="row g-3" onSubmit={handleSubmit}>
+                    <form className="row g-3">
                         <div className="col-md-3">
                             <label htmlFor="inputId" className="form-label">ID:</label>
                             <input
@@ -71,7 +48,7 @@ const EditarUsuario = () => {
                                 id="inputValor"
                                 name="nome"
                                 value={doacao.valor}
-                                onChange={handleChange}
+                              
                             />
                         </div>
                         <div className="col-md-3">
@@ -92,7 +69,7 @@ const EditarUsuario = () => {
                                 id="inputEmail4"
                                 name="obs"
                                 value={doacao.obs}
-                                onChange={handleChange}
+                               
                             />
                         </div>
                         <div className="col-md-3">
@@ -103,7 +80,7 @@ const EditarUsuario = () => {
                                 className="form-control"
                                 name="usuario_id"
                                 value={doacao.usuario_id}
-                                onChange={handleChange}
+                               
                             />
                                
                             
@@ -128,7 +105,7 @@ const EditarUsuario = () => {
                             </button>
                         </div>
                     </form>
-                    {mensagem && <p className="mt-2">{mensagem}</p>}
+                   
                 </section>
             </div>
             <FOOOTER className={`${CSS.alinhasafada}`} />
@@ -136,4 +113,4 @@ const EditarUsuario = () => {
     );
 };
 
-export default EditarUsuario;
+export default EditarDoacao;

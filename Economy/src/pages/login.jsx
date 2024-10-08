@@ -5,6 +5,7 @@ import Menu from "../components/menu";
 import Footer from "../components/footer";
 import css from "../Css/login.module.css"; // Importa seu CSS
 import { Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
     const { valor, mudar } = useForm({ email: '', senha: '' });
@@ -26,7 +27,7 @@ const Login = () => {
 
     return (
         <>
-        
+                <Helmet><title>Login</title></Helmet>
         <Menu ativo=""/>
         <div>
   <div className="container">

@@ -5,57 +5,31 @@ import CSS from "../Css/esquecisenha.module.css";
 import CatalogoService from "../services/CatalogoService"; 
 import { useNavigate, useParams } from "react-router-dom";
 
-const EditarUsuario = () => {
-    const navigate = useNavigate();
-    const { catalogoId } = useParams(); // Pega o ID do usuário da URL
-    const [catalogo, setCatalogo] = useState({
-        id: '',
-        dataCadastro: '',
-        obs: '',
-        item_id: '',
-        statusItem: '',
-        
-       
+const EditarCatalogo = () => {
 
+    const { id } = useParams(); // Pegando o id da URL
+    const [catalogo, setCatalogo] = useState(true);
 
-    });
-    const [mensagem, setMensagem] = useState('');
 
     useEffect(() => {
-        const fetchcatalogo = async () => {
-            try {
-                const data = await CatalogoService.findById(id);
-                setCatalogo(data);
-            } catch (error) {
-                setMensagem('Erro ao buscar catalogo.');
-            }
-        };
+       CatalogoService.findById(id) // Chame a API para buscar o usuário pelo id
+            .then(response => {
+                setCatalogo(response.data); // Atualiza o estado com os dados do usuário
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, [id]); // Dependência do id para refazer a requisição caso o id mude
 
-        fetchcatalogo();
-    }, [catalogoId]);
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setCatalogo({ ...catalogo, [name]: value });
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            await UsuarioService.update(catalogoId, catalogo);
-            setMensagem('catalogo atualizado com sucesso!');
-            navigate('/usuarios');
-        } catch (error) {
-            setMensagem('Erro ao atualizar catalogo.');
-        }
-    };
-
+    
     return (
         <>
+                <Helmet><title>Editar Catálogo</title></Helmet>
+
             <Menu />
             <div className="d-flex">
                 <section className="m-2 p-3 shadow-lg">
-                    <form className="row g-3" onSubmit={handleSubmit}>
+                    <form className="row g-3">
                         <div className="col-md-3">
                             <label htmlFor="inputId" className="form-label">ID:</label>
                             <input
@@ -74,7 +48,7 @@ const EditarUsuario = () => {
                                 id="inputData"
                                 name="data_cadastro"
                                 value={catalogo.dataCadastro}
-                                onChange={handleChange}
+                               
                             />
                         </div>
                         <div className="col-md-3">
@@ -95,7 +69,7 @@ const EditarUsuario = () => {
                                 id="inpuItemId"
                                 name="item_id"
                                 value={catalogo.item_id}
-                                onChange={handleChange}
+                                
                             />
                         </div>
                         <div className="col-md-3">
@@ -106,7 +80,7 @@ const EditarUsuario = () => {
                                 className="form-control"
                                 name="status_item"
                                 value={catalogo.statusItem}
-                                onChange={handleChange}
+                              
                             />
                         </div>
                       
@@ -121,7 +95,7 @@ const EditarUsuario = () => {
                             </button>
                         </div>
                     </form>
-                    {mensagem && <p className="mt-2">{mensagem}</p>}
+                    
                 </section>
             </div>
             <FOOOTER className={`${CSS.alinhasafada}`} />
@@ -129,4 +103,4 @@ const EditarUsuario = () => {
     );
 };
 
-export default EditarUsuario;
+export default EditarCatalogo;

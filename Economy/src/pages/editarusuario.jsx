@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import Menu from "../components/menu";
 import FOOOTER from '../components/footer';
 import CSS from "../Css/esquecisenha.module.css";  
@@ -24,6 +25,7 @@ const EditarUsuario = () => {
 
     return (
         <>
+                    <Helmet><title>Editar Usuário</title></Helmet>
             <Menu />
             <div className="d-flex">
                 <section className="m-2 p-3 shadow-lg">

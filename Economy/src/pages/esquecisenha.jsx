@@ -60,6 +60,7 @@ const ResetPassword = () => {
 
     return (
         <>
+                   <Helmet><title>Esqueci Senha</title></Helmet>
             <Menu ativo={"esquecisenha"} />
             <div style={{ maxWidth: '400px', margin: 'auto', padding: '20px' }}>
                 <h2>Redefinir Senha</h2>

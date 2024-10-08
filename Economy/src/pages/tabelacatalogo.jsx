@@ -13,16 +13,16 @@ const TabelaCatalogo = () => {
     const navigate = useNavigate();
 
     const goTo = () => {
-        navigate('/catalogoeditar')
+        navigate('/editarcatalogo/')
     }
 
-    const [catalogos, setCatalogos] = useState([]);
+    const [catalogo, setCatalogo] = useState([]);
 
     useEffect(() => {
        CatalogoService.findAll().then(
             (response) => {
-                const catalogos = response.data;
-                setCatalogos(catalogos);
+                const catalogo = response.data;
+                setCatalogo(catalogo);
             }
         ).catch((error) => {
             console.log(error);
@@ -30,10 +30,12 @@ const TabelaCatalogo = () => {
     }, []);
 
     const editar = (id) => {
-        navigate(`/doacaoeditar/` + id)
+        navigate(`/editarcatalogo/${id}`)
     }
 
     return (
+        <>
+           <Helmet><title>Tabela do Catálogo</title></Helmet>
         <div className="d-flex">
             <Sidebar />
             <div className="p-3 w-100">
@@ -56,7 +58,7 @@ const TabelaCatalogo = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {catalogos?.map((catalogo) => (
+                                {catalogo?.map((catalogo) => (
                                     <tr className="" key={catalogo.id}>
                                         <td>{catalogo.id}</td>
                                         <td>{catalogo.dataCadastro}</td>
@@ -66,7 +68,7 @@ const TabelaCatalogo = () => {
                     
                                        
                                         <td>
-                                            <button onClick={() => editar(catalogos.id)}
+                                            <button onClick={() => editar(catalogo.id)}
                                                 className="btn btn-sm btn-warning rounded">
                                                 <i className="bi bi-envelope-open"> Editar</i>
                                             </button>
@@ -79,6 +81,7 @@ const TabelaCatalogo = () => {
                 </section>
             </div>
         </div>
+        </>
     )
 }
 

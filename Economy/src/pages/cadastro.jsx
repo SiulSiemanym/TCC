@@ -13,6 +13,8 @@ export default function Cadastro(){
   console.log(valor)
     return(
         <>
+                <Helmet><title>Cadastro</title></Helmet>
+
         <Menu ativo=''/>
   <div className={`${Css.backgroundimage}`} style={{ backgroundImage:`url(${back})` }}/>
   

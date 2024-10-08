@@ -10,7 +10,7 @@ const TabelaItem = () => {
     const navigate = useNavigate();
 
     const goTo = () => {
-        navigate('/itemeditar')
+        navigate('/editaritem')
     }
 
     const [itens, setItens] = useState([]);
@@ -27,11 +27,13 @@ const TabelaItem = () => {
     }, []);
 
     const editar = (id) => {
-        navigate(`/itemeditar/${id}`); 
+        navigate(`/editaritem/${id}`); 
     }
 
     return (
-        <div className="d-flex">
+     <>
+         <Helmet><title>Tabela de Itens</title></Helmet>
+     <div className="d-flex">
             <Sidebar />
             <div className="p-3 w-100">
                 <Menu
@@ -91,6 +93,7 @@ const TabelaItem = () => {
                 </section>
             </div>
         </div>
+        </>
     )
 }
 

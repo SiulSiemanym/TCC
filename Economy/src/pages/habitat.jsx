@@ -8,7 +8,7 @@ import Menu from "../components/menu"
 import { useState } from "react";
 import Pé from "../components/footer"
 import { habitats } from "../constants/habitats";
-
+import Fundo from "../components/fundo"
 
 
 export default function CatalogAnimal(){
@@ -16,8 +16,11 @@ export default function CatalogAnimal(){
   
     return(
         <>
+
         <Helmet><title>Catálogo Animais</title></Helmet>
+        <Fundo>
         <Menu ativo={"habitats"}/>
+        
         <div className={`${Animal.backgroundimage}`} style={{ backgroundImage:`url(${back})` }} >
         
         <div>
@@ -40,7 +43,9 @@ export default function CatalogAnimal(){
           </div>
         </div>
         </div>
+        
         <Pé />
+        </Fundo>
       </>
         
     )
