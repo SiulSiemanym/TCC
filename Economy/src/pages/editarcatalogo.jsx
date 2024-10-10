@@ -98,7 +98,7 @@ const EditarCatalogo = () => {
                     
                 </section>
             </div>
-            <FOOOTER className={`${CSS.alinhasafada}`} />
+            <FOOOTER className={`${CSS.alinhar}`} />
         </>
     );
 };

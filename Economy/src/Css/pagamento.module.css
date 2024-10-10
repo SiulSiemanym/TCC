@@ -60,6 +60,15 @@
     font-weight: bold;
 }
 
-.sobesafada{
+.sobe{
  position: fixed;
 }
+.backgroundimage {
+    position: relative;
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }

@@ -1,5 +1,5 @@
 .backgroundimage {
-    position: fixed; /* Fixa a imagem na tela */
+    position: relative; /* Fixa a imagem na tela */
     top: 0;
     left: 0;
     width: 100%; /* Largura total da tela */
@@ -9,7 +9,7 @@
     background-position: center; /* Centraliza a imagem */
     background-attachment: fixed; /* A imagem fica fixa ao fundo */
     background-repeat: no-repeat;
-    z-index: -1; /* Coloca a imagem atrás de outros elementos */
+    z-index: 0; /* Coloca a imagem atrás de outros elementos */
   }
   
   .content {

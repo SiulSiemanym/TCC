@@ -6,7 +6,7 @@ import Footer from "../components/footer";
 import css from "../Css/login.module.css"; // Importa seu CSS
 import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-
+import Fundo from "../components/fundo.jsx"
 const Login = () => {
     const { valor, mudar } = useForm({ email: '', senha: '' });
     const navigate = useNavigate()
@@ -28,7 +28,8 @@ const Login = () => {
     return (
         <>
                 <Helmet><title>Login</title></Helmet>
-        <Menu ativo=""/>
+                <Fundo>
+                            <Menu ativo=""/>
         <div>
   <div className="container">
     <div className="row ">
@@ -98,6 +99,8 @@ const Login = () => {
                 </div>
             </div>
             <Footer />
+            </Fundo>
+
         </>
     );
 };

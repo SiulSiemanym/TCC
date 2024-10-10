@@ -57,7 +57,7 @@ export default function Sobre(){
       </div>
     </div>
   </section>
-<FOOOTER className={`${Css.sobesafada}`} />
+<FOOOTER className={`${Css.sobe}`} />
 
         </>
     )}

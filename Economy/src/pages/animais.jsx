@@ -7,7 +7,6 @@ import Tabela from "../components/criarelementotabela";
 import Menu from "../components/menu"
 import { useState } from "react";
 import Pé from "../components/footer"
-
 import { animais } from "../constants/animais";
 
 export default function CatalogAnimal(){
@@ -16,9 +15,9 @@ export default function CatalogAnimal(){
     return(
         <>
         <Helmet><title>Catálogo Animais</title></Helmet>
-        <Menu ativo={"animais"}/>
-        <div className={`${Animal.backgroundimage}`} style={{ backgroundImage:`url(${back})` }} >
         
+        <div className={`${Animal.backgroundimage}`} style={{ backgroundImage:`url(${back})` }} >
+        <Menu ativo={"animais"}/>
         <div>
           <div id="barradepesquisa" className={`mb-5  ${Animal.barradepesquisa}`} >
             <input onChange={(e) => setConsulta(e.target.value)} type="text" id="txtBusca" className={`${Animal.txtBusca}`} placeholder="Pesquisar animais..." />

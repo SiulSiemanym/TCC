@@ -94,7 +94,7 @@ const ResetPassword = () => {
                     </div>
                 )}
             </div>
-            <FOOOTER className={`${CSS.alinhasafada}`} />
+            <FOOOTER className={`${CSS.alinhar}`} />
         </>
     );
 };

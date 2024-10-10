@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Css from "../Css/pagamento.module.css"
 import Menu from "../components/menu"
 import Pé from "../components/footer"
+import back from "../assets/Imagens/Inicio/fundo-branco-com-folhas-verdes-isoladas-nos-cantos-e-espaco-de-copia-no-meio_373887-273.jpg";
+
 
 
 const Pagamento = () => {
@@ -36,7 +38,9 @@ const Pagamento = () => {
   return (
     <>
             <Helmet><title>Pagamento</title></Helmet>
+                <div className={`${Css.backgroundimage}`} style={{ backgroundImage:`url(${back})` }} >
     <Menu></Menu>
+
     <div className={Css.saidepertodanavbar}>
       <div className={`card ${Css.card} mb-3 text-bg-dark text-left mx-auto ${Css.caixapagamento}`} style={{ width: '45%', backgroundColor: '#2b3035' }} >
         <h2 style={{ textAlign: 'center', marginTop: '50px' }}>
@@ -90,7 +94,9 @@ const Pagamento = () => {
         </form>
       </div>
     </div>
-    <Pé  className={`${Css.sobesafada}`} />
+    <Pé  className={`${Css.sobe}`} />
+    </div>
+ 
     </>
   );
 };

@@ -6,6 +6,7 @@ import Footer from "../components/footer"
 import { Link, useNavigate } from "react-router-dom";
 import useForm from "../hooks/useForm.jsx";
 import axios from "axios"
+import Fundo from "../components/fundo"
 
 export default function Cadastro(){
   const{ mudar, valor }=useForm({ nome:"", email:"", cpf:"", senha:"" })
@@ -14,9 +15,9 @@ export default function Cadastro(){
     return(
         <>
                 <Helmet><title>Cadastro</title></Helmet>
-
+         <Fundo>
         <Menu ativo=''/>
-  <div className={`${Css.backgroundimage}`} style={{ backgroundImage:`url(${back})` }}/>
+ 
   
   <div style={{ marginTop: "-2%", marginBottom: "-2%" }}>
     <div className="container">
@@ -138,6 +139,7 @@ export default function Cadastro(){
     </div>
   </div>
   <Footer></Footer>
+  </Fundo>
 </>
 
     )}

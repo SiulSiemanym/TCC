@@ -196,7 +196,7 @@ const EditarItem = () => {
                     </form>
                 </section>
             </div>
-            <FOOOTER className={`${CSS.alinhasafada}`} />
+            <FOOOTER className={`${CSS.alinhar}`} />
         </>
     );
     };

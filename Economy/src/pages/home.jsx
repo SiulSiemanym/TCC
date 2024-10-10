@@ -121,7 +121,7 @@ export default function Home(){
         </div>
       </div>
     
-    <FOOOTER className={`${styles.sobesafada}`} />
+    <FOOOTER className={`${styles.sobe}`} />
     </Fundo>
     </>
     )
