@@ -8,8 +8,8 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const EditarUsuario = () => {
     const { id } = useParams(); // Pegando o id da URL
-    const [usuario, setUsuario] = useState({});
-    const [editar, setEditando] = useState(false); // Controla se está editando
+    const [usuario, setUsuario] = useState(true);
+    const [editar, setEditando] = useState(true); // Controla se está editando
 
     useEffect(() => {
         const fetchUsuario = async () => {
@@ -24,8 +24,8 @@ const EditarUsuario = () => {
     }, [id]);
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setUsuario((prev) => ({ ...prev, [name]: value }));
+        const { nome, valor } = e.target;
+        setUsuario((prev) => ({ ...prev, [nome]: valor }));
     };
 
     const handleSave = async (e) => {
@@ -47,7 +47,13 @@ const EditarUsuario = () => {
             <Menu />
             <div className="d-flex">
                 <section className="m-2 p-3 shadow-lg">
-                    <form className="row g-3" onSubmit={handleSave}>
+                    <form className="row g-3" onSubmit={async(e) =>{
+                     e.preventDefault()
+                     console.table(data)
+                     const requisicao=axios.post("http://localhost:8080/economy/usuario/update", data)
+                     console.log(requisicao.data)
+                     navigator("/editarusuario")  
+                    }}>
                         <div className="col-md-3">
                             <label htmlFor="inputId" className="form-label">ID:</label>
                             <input
