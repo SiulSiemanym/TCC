@@ -8,6 +8,7 @@ import useForm from "../hooks/useForm.jsx";
 import axios from "axios";
 import useRequisitar from "../hooks/useRequisitar.jsx";
 import { useNavigate, } from "react-router-dom";
+import Fundo from "../components/fundo"
 
 export default function EditarPerfil({ setProfileImage }) {
     const usuarioJSON = localStorage.getItem("usuario");
@@ -61,7 +62,7 @@ export default function EditarPerfil({ setProfileImage }) {
     return (
         <>
                     <Helmet><title>Editar Perfil</title></Helmet>
-
+            <Fundo>
             <Menu profileImage={image || Perfil} />
             <div className={`${Css.jorge}`} style={{ position: "relative" }}>
                 <form onSubmit={async (e) => {
@@ -192,7 +193,9 @@ export default function EditarPerfil({ setProfileImage }) {
                     </div>
                 </form>
             </div>
+            
             <FOOOTER />
+            </Fundo>
         </>
     );
 }

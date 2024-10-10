@@ -5,11 +5,13 @@ import Css from "../Css/sobre.module.css"
 import Logo from "../assets/Imagens/Menu/Econo.png"
 import FOOOTER from "../components/footer"
 import Menu from "../components/menu";
+import Fundo from "../components/fundo"
 
 export default function Sobre(){
     return(
         <>
                 <Helmet><title>Sobre Nós</title></Helmet>
+                <Fundo>
             <Menu ativo={"Sobre"}/>
   <section  
 
@@ -58,6 +60,6 @@ export default function Sobre(){
     </div>
   </section>
 <FOOOTER className={`${Css.sobe}`} />
-
+</Fundo>
         </>
     )}

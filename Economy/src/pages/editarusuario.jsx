@@ -2,13 +2,34 @@ import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Menu from "../components/menu";
 import FOOOTER from '../components/footer';
-import CSS from "../Css/editarusuario.module.css";  
-import UsuarioService from "../services/UsuarioService"; 
-import { useNavigate, useParams } from "react-router-dom";
+import CSS from "../Css/editarusuario.module.css";
+import UsuarioService from "../services/UsuarioService";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
+import useForm from "../hooks/useForm"
+import useEnviar from "../hooks/useEnviar.jsx"
 
 const EditarUsuario = () => {
+
+    const navigate = useNavigate();
+    const objectValues = {
+        nome: "",
+        email: "",
+        nivelAcesso: "",
+        statusUsuario: "",
+        senha: "",
+    }
+
+    const { requisitar } = useEnviar((dados) => {
+        if (dados.id == usuario?.id) {
+
+        }
+        navigate('/usuariotabela')
+    })
+
+    const { mudar, valor, mudarDireto } = useForm(objectValues)
+
     const { id } = useParams(); // Pegando o id da URL
-    const [usuario, setUsuario] = useState(true);
+    const [usuario, setUsuario] = useState(undefined);
     const [editar, setEditando] = useState(true); // Controla se está editando
 
     useEffect(() => {
@@ -22,6 +43,18 @@ const EditarUsuario = () => {
         };
         fetchUsuario();
     }, [id]);
+
+    useEffect(() => {
+        if (usuario) {
+            console.log(usuario)
+            console.log(usuario.senha)
+            mudarDireto("email", usuario.email)
+            mudarDireto("nivelAcesso", usuario.nivelAcesso)
+            mudarDireto("nome", usuario.nome)
+            mudarDireto("senha", atob(usuario.senha))
+            mudarDireto("statusUsuario", usuario.statusUsuario)
+        }
+    }, [usuario])
 
     const handleChange = (e) => {
         const { nome, valor } = e.target;
@@ -47,12 +80,9 @@ const EditarUsuario = () => {
             <Menu />
             <div className="d-flex">
                 <section className="m-2 p-3 shadow-lg">
-                    <form className="row g-3" onSubmit={async(e) =>{
-                     e.preventDefault()
-                     console.table(data)
-                     const requisicao=axios.post("http://localhost:8080/economy/usuario/update", data)
-                     console.log(requisicao.data)
-                     navigator("/editarusuario")  
+                    <form className="row g-3" onSubmit={(e) => {
+                        e.preventDefault()
+                        requisitar("economy/usuario/alterar", {...usuario, ...valor})
                     }}>
                         <div className="col-md-3">
                             <label htmlFor="inputId" className="form-label">ID:</label>
@@ -60,7 +90,7 @@ const EditarUsuario = () => {
                                 type="text"
                                 className="form-control"
                                 id="inputId"
-                                value={usuario.id || ''}
+                                value={usuario?.id || ''}
                                 readOnly
                             />
                         </div>
@@ -71,8 +101,19 @@ const EditarUsuario = () => {
                                 className="form-control"
                                 id="inputNome"
                                 name="nome"
-                                value={usuario.nome || ''}
-                                onChange={handleChange}
+                                value={valor.nome || ''}
+                                onChange={mudar("nome")}
+                            />
+                        </div>
+                        <div className="col-md-6">
+                            <label htmlFor="inputSenha" className="form-label">Senha:</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="inputSenha"
+                                name="senha"
+                                value={valor.senha || ''}
+                                onChange={mudar("senha")}
                             />
                         </div>
                         <div className="col-md-3">
@@ -81,7 +122,7 @@ const EditarUsuario = () => {
                                 type="text"
                                 className="form-control"
                                 id="inputData"
-                                value={usuario.dataCadastro || ''}
+                                value={usuario?.dataCadastro|| ''}
                                 readOnly
                             />
                         </div>
@@ -92,8 +133,8 @@ const EditarUsuario = () => {
                                 className="form-control"
                                 id="inputEmail4"
                                 name="email"
-                                value={usuario.email || ''}
-                                onChange={handleChange}
+                                value={valor.email || ''}
+                                onChange={mudar("email")}
                             />
                         </div>
                         <div className="col-md-3">
@@ -102,24 +143,26 @@ const EditarUsuario = () => {
                                 id="inputAcesso"
                                 className="form-select"
                                 name="nivelAcesso"
-                                value={usuario.nivelAcesso || ''}
-                                onChange={handleChange}
+                                value={valor.nivelAcesso}
+                                onChange={mudar("nivelAcesso")}
                             >
-                                <option value="">Nível de Acesso</option>
-                                <option value="admin">Admin</option>
-                                <option value="usuario">Usuário</option>
+                                <option value="Usuario">Usuario</option>
+                                <option value="Admin">Admin</option>
                             </select>
                         </div>
                         <div className="col-md-3">
                             <label htmlFor="inputStatus" className="form-label">Status:</label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                id="inputStatus"
+                            <select
+                                id="inputAcesso"
+                                className="form-select"
                                 name="statusUsuario"
-                                value={usuario.statusUsuario || ''}
-                                onChange={handleChange}
-                            />
+                                value={valor.statusUsuario}
+                                onChange={mudar("statusUsuario")}
+                            >
+
+                                <option value="ATIVO">ATIVO</option>
+                                <option value="INATIVO">INATIVO</option>
+                            </select>
                         </div>
                         <div className="col-12 d-flex justify-content-between">
                             <button
@@ -129,12 +172,7 @@ const EditarUsuario = () => {
                             >
                                 Salvar
                             </button>
-                            <button type="button" className="btn btn-warning">
-                                Reativar / Resetar a Senha
-                            </button>
-                            <button type="button" className="btn btn-danger">
-                                Inativar Conta
-                            </button>
+
                         </div>
                     </form>
                 </section>
