@@ -46,15 +46,21 @@ const EditarUsuario = () => {
 
     useEffect(() => {
         if (usuario) {
-            console.log(usuario)
-            console.log(usuario.senha)
-            mudarDireto("email", usuario.email)
-            mudarDireto("nivelAcesso", usuario.nivelAcesso)
-            mudarDireto("nome", usuario.nome)
-            mudarDireto("senha", atob(usuario.senha))
-            mudarDireto("statusUsuario", usuario.statusUsuario)
+            console.log(usuario);
+            console.log(usuario.senha);
+            
+            mudarDireto("email", usuario.email);
+            mudarDireto("nivelAcesso", usuario.nivelAcesso);
+            mudarDireto("nome", usuario.nome);
+    
+            // Atribui a senha diretamente sem decodificação
+            mudarDireto("senha", usuario.senha);
+    
+            mudarDireto("statusUsuario", usuario.statusUsuario);
         }
-    }, [usuario])
+    }, [usuario]);
+    
+    
 
     const handleChange = (e) => {
         const { nome, valor } = e.target;
@@ -77,7 +83,7 @@ const EditarUsuario = () => {
     return (
         <>
             <Helmet><title>Editar Usuário</title></Helmet>
-            <Menu />
+            <Menu ativo='Tabela'/>
             <div className="d-flex">
                 <section className="m-2 p-3 shadow-lg">
                     <form className="row g-3" onSubmit={(e) => {
@@ -108,13 +114,14 @@ const EditarUsuario = () => {
                         <div className="col-md-6">
                             <label htmlFor="inputSenha" className="form-label">Senha:</label>
                             <input
-                                type="text"
-                                className="form-control"
-                                id="inputSenha"
-                                name="senha"
-                                value={valor.senha || ''}
-                                onChange={mudar("senha")}
-                            />
+    type="text" // Altere para 'text' para mostrar a senha
+    className="form-control"
+    id="inputSenha"
+    name="senha"
+    value={valor.senha || ''}
+    onChange={mudar("senha")}
+/>
+
                         </div>
                         <div className="col-md-3">
                             <label htmlFor="inputData" className="form-label">Cadastro:</label>
@@ -146,8 +153,8 @@ const EditarUsuario = () => {
                                 value={valor.nivelAcesso}
                                 onChange={mudar("nivelAcesso")}
                             >
-                                <option value="Usuario">Usuario</option>
-                                <option value="Admin">Admin</option>
+                                <option value="USER">Usuario</option>
+                                <option value="ADMIN">Admin</option>
                             </select>
                         </div>
                         <div className="col-md-3">

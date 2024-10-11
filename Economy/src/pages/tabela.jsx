@@ -36,7 +36,7 @@
         <>
                 <Helmet><title>Tabela de Usuários</title></Helmet>
 
-            <Menu ativo=''/> 
+            <Menu ativo='Tabela'/> 
         <div className="d-flex">
             
                 <div className="p-3 w-100">

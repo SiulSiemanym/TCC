@@ -28,7 +28,9 @@ export default function Menu({ ativo }) {
     <header>
       <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div className="container-fluid">
-          <Link className="navbar-brand" to={'/'}><img src={Logo} className={menu.logo} alt="Logo" /></Link>
+          <Link className="navbar-brand" to={'/'}>
+            <img src={Logo} className={menu.logo} alt="Logo" />
+          </Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -46,6 +48,19 @@ export default function Menu({ ativo }) {
               <li className="nav-item">
                 <Link className={`nav-link ${ativo === "Sobre" ? " active" : ""} ${menu.navegacao}`} to={'/sobre'}>Sobre nós</Link>
               </li>
+              {usuario?.nivelAcesso === "ADMIN" && (
+                <>
+                  <li className="nav-item">
+                    <Link className={`nav-link ${ativo === "Tabela" ? " active" : ""} ${menu.navegacao}`} to={'/usuariotabela'}>Tabela Usuário</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className={`nav-link ${ativo === "Itens" ? " active" : ""} ${menu.navegacao}`} to={'/itemtabela'}>Tabela Itens</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className={`nav-link ${ativo === "Doação" ? " active" : ""} ${menu.navegacao}`} to={'/doacao'}>Doação</Link>
+                  </li>
+                </>
+              )}
             </ul>
             <h1 className={`${menu.nome}`}>{usuario?.nome}</h1>
             <span className="navbar-text">
@@ -59,3 +74,5 @@ export default function Menu({ ativo }) {
     </header>
   );
 }
+
+

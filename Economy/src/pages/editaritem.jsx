@@ -96,7 +96,7 @@ const EditarItem = () => {
     return (
         <>
                    <Helmet><title>Editar Item</title></Helmet>
-            <Menu />
+            <Menu ativo='Itens' />
             <div className="d-flex">
                 <section className="m-2 p-3 shadow-lg">
                 <form className="row g-3" onSubmit={(e) => {

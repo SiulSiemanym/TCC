@@ -36,9 +36,7 @@ const TabelaItem = () => {
      <div className="d-flex">
             <Sidebar />
             <div className="p-3 w-100">
-                <Menu
-                    goto={'/usuario'}
-                    title={'Lista de Itens'}
+                <Menu ativo='Itens'
                 />
                 <section className="m-2 p-2 shadow-lg">
                     <div className="table-wrapper">

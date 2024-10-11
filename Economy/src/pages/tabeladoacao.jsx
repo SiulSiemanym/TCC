@@ -36,25 +36,22 @@ const TabelaDoacao = () => {
     return (
        <>
            <Helmet><title>Tabela de Doações</title></Helmet>
+           <Menu ativo='Doação' />
        <div className="d-flex">
             <Sidebar />
             <div className="p-3 w-100">
-                <Menu
-                    goto={'/usuario'}
-                    title={'Lista de Doações'}
-                    
-                />
+                
                 <section className="m-2 p-2 shadow-lg">
                     <div className="table-wrapper">
                         <table className="table table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>
-                                    <th scope="col">DataCadastro</th>
-                                    <th scope="col">obs</th>
+                                    <th scope="col">Dia da efetuação</th>
+                                    <th scope="col">Destinátario</th>
                                     <th scope="col">valor</th>
-                                    <th scope="col">usuario_id</th>
-                                    <th scope="col">StatusUsuario</th>
+                                    <th scope="col">Nome do doador</th>
+                                    <th scope="col">Estatos da Doação</th>
                                     <th scope="col">Abrir</th>
                                 </tr>
                             </thead>

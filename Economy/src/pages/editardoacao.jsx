@@ -26,7 +26,7 @@ const EditarDoacao = () => {
         <>
                    <Helmet><title>Editar Doação</title></Helmet>
 
-            <Menu />
+            <Menu ativo='Doação'/>
             <div className="d-flex">
                 <section className="m-2 p-3 shadow-lg">
                     <form className="row g-3">
