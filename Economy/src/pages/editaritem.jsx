@@ -4,23 +4,94 @@ import FOOOTER from '../components/footer';
 import CSS from "../Css/esquecisenha.module.css";  
 import ItemService from "../services/ItemService"; 
 import { useNavigate, useParams } from "react-router-dom";
+import useEnviar from "../hooks/useEnviar.jsx"
+import useForm from "../hooks/useForm"
+import { Helmet } from 'react-helmet';
+
 
 const EditarItem = () => {
 
-        const { id } = useParams(); // Pegando o id da URL
-        const [item, setItem] = useState(true);
-    
-    
-        useEffect(() => {
-           ItemService.findById(id) // Chame a API para buscar o usuário pelo id
-                .then(response => {
-                    setItem(response.data); // Atualiza o estado com os dados do usuário
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [id]); // Dependência do id para refazer a requisição caso o id mude
-    
+    const navigate = useNavigate();
+    const objectValues = {
+       id:"",
+        categoria: "",
+        nome: "",
+        descricao: "",
+        textointrodutorio: "",
+        imagem: "",
+        imagem1: "",
+        imagem2: "",
+        imagem3: "",
+        populacao: "",
+        motivo: "",
+        metadenome1: "",
+        metadenome2: "",
+        statusItem:"",
+    }
+
+    const { requisitar } = useEnviar((dados) => {
+        if (dados.id == item?.id) {
+
+        }
+        navigate('/tabelaitem')
+    })
+
+    const { mudar, valor, mudarDireto } = useForm(objectValues)
+
+    const { id } = useParams(); // Pegando o id da URL
+    const [item, setItem] = useState(undefined);
+    const [editar, setEditando] = useState(true); // Controla se está editando
+
+    useEffect(() => {
+        const fetchItem = async () => {
+            try {
+                const response = await ItemService.findById(id);
+                setItem(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchItem();
+    }, [id]);
+
+    useEffect(() => {
+        if (item) {
+            console.log(item)
+            mudarDireto("categoria", item.categoria)
+            mudarDireto("nome", item.nome)
+            mudarDireto("nome", item.descricao)
+            mudarDireto("textointrodutorio", item.textointrodutorio)
+            mudarDireto("imagem", item.imagem)
+            mudarDireto("imagem1", item.imagem1)
+            mudarDireto("imagem2", item.imagem2)
+            mudarDireto("imagem3", item.imagem3)
+            mudarDireto("populacao", item.populacao)
+            mudarDireto("motivo", item.motivo)
+            mudarDireto("metadenome1", item.metadenome1)
+            mudarDireto("metadenome2", item.metadenome2)
+            mudarDireto("statusItem", item.statusItem)
+
+
+        }
+    }, [item])
+
+    const handleChange = (e) => {
+        const { nome, valor } = e.target;
+        setItem((prev) => ({ ...prev, [nome]: valor }));
+    };
+
+    const handleSave = async (e) => {
+        e.preventDefault(); // Previne o comportamento padrão do formulário
+        try {
+            const resposta = await ItemService.update(id, item); // Atualiza os dados do usuário
+            localStorage.setItem("item", JSON.stringify(resposta)); // Armazena no localStorage
+            setEditando(true); // Define como editando
+            alert("Usuário atualizado com sucesso!"); // Mensagem de sucesso
+        } catch (error) {
+            console.error("Erro ao salvar:", error);
+            alert("Erro ao atualizar usuário."); // Mensagem de erro
+        }
+    };
     
     
     return (
@@ -29,7 +100,10 @@ const EditarItem = () => {
             <Menu />
             <div className="d-flex">
                 <section className="m-2 p-3 shadow-lg">
-                    <form className="row g-3" >
+                <form className="row g-3" onSubmit={(e) => {
+                        e.preventDefault()
+                        requisitar("economy/item/alterar", {...item, ...valor})
+                    }}>
                         <div className="col-md-3">
                             <label htmlFor="inputId" className="form-label">ID:</label>
                             <input
@@ -48,6 +122,7 @@ const EditarItem = () => {
                                 id="inputValor"
                                 name="nome"
                                 value={item.categoria}
+                                onChange={mudar("categoria")}
                                
                             />
                         </div>
@@ -58,6 +133,7 @@ const EditarItem = () => {
                                 className="form-control"
                                 id="inputData"
                                 value={item.nome}
+                                onChange={mudar("nome")}
                                 
                             />
                         </div>
@@ -69,6 +145,7 @@ const EditarItem = () => {
                                 id="inputEmail4"
                                 name="obs"
                                 value={item.descricao}
+                                onChange={mudar("descricao")}
                               
                             />
                         </div>
@@ -78,8 +155,9 @@ const EditarItem = () => {
                                 type="text"
                                 id="inputAcesso"
                                 className="form-control"
-                                name="usuario_id"
+                                name="item_id"
                                 value={item.textointrodutorio}
+                                onChange={mudar("textointrodutorio")}
                             
                             />
                                
@@ -92,6 +170,7 @@ const EditarItem = () => {
                                 className="form-control"
                                 id="inputStatus"
                                 value={item.imagem}
+                                onChange={mudar("imagem")}
                                 
                             />
                         </div>
@@ -103,6 +182,7 @@ const EditarItem = () => {
                                 className="form-control"
                                 id="inputStatus"
                                 value={item.imagem1}
+                                onChange={mudar("imagem1")}
                                 
                             />
                         </div>
@@ -114,6 +194,8 @@ const EditarItem = () => {
                                 className="form-control"
                                 id="inputStatus"
                                 value={item.imagem2}
+                                onChange={mudar("imagem2")}
+                                
                                 
                             />
                         </div>
@@ -125,6 +207,7 @@ const EditarItem = () => {
                                 className="form-control"
                                 id="inputStatus"
                                 value={item.imagem1}
+                                onChange={mudar("imagem2")}
                                 
                             />
                         </div>
@@ -136,6 +219,7 @@ const EditarItem = () => {
                                 className="form-control"
                                 id="inputStatus"
                                 value={item.populacao}
+                                onChange={mudar("populacao")}
                                 
                             />
                         </div>
@@ -147,6 +231,7 @@ const EditarItem = () => {
                                 className="form-control"
                                 id="inputStatus"
                                 value={item.motivo}
+                                onChange={mudar("motivo")}
                                 
                             />
                         </div>
@@ -158,6 +243,7 @@ const EditarItem = () => {
                                 className="form-control"
                                 id="inputStatus"
                                 value={item.metadenome1}
+                                onChange={mudar("metadenome1")}
                                 
                             />
                         </div>
@@ -169,6 +255,7 @@ const EditarItem = () => {
                                 className="form-control"
                                 id="inputStatus"
                                 value={item.metadenome2}
+                                onChange={mudar("metadenome2")}
                                 
                             />
                         </div>
@@ -180,6 +267,7 @@ const EditarItem = () => {
                                 className="form-control"
                                 id="inputStatus"
                                 value={item.statusItem}
+                                onChange={mudar("statusItem")}
                                 
                             />
                         </div>
