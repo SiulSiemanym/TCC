@@ -5,7 +5,7 @@
     import Sidebar from "../Menu/Sidebar";
     import Menu from "../components/menu";
     import FOOOTER from "../components/footer"
-    import gay from "../Css/tabela.module.css"
+    import CSS from "../Css/tabela.module.css"
 
 
 
@@ -61,7 +61,7 @@
                                     {usuarios?.map((usuario) => (
                                         <tr className="" key={usuario.id}>
                                             <td>{usuario.id}</td>
-                                            <td  className={`text-break ${gay.largura}`}>{usuario.nome}</td>
+                                            <td  className={`text-break ${CSS.largura}`}>{usuario.nome}</td>
                                             <td>{usuario.email}</td>
                                             <td>{usuario.cpf}</td>
                                             <td style={{ width: "20vw" }}><img className="w-100" src={usuario.foto} alt="" /></td>

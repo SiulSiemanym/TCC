@@ -3,7 +3,7 @@ import Menu from "../components/menu";
 import FOOOTER from '../components/footer';
 import CSS from "../Css/esquecisenha.module.css";  
 import ItemService from "../services/ItemService"; 
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import useEnviar from "../hooks/useEnviar.jsx"
 import useForm from "../hooks/useForm"
 import { Helmet } from 'react-helmet';
@@ -13,7 +13,6 @@ const EditarItem = () => {
 
     const navigate = useNavigate();
     const objectValues = {
-       id:"",
         categoria: "",
         nome: "",
         descricao: "",
@@ -59,7 +58,7 @@ const EditarItem = () => {
             console.log(item)
             mudarDireto("categoria", item.categoria)
             mudarDireto("nome", item.nome)
-            mudarDireto("nome", item.descricao)
+            mudarDireto("descricao", item.descricao)
             mudarDireto("textointrodutorio", item.textointrodutorio)
             mudarDireto("imagem", item.imagem)
             mudarDireto("imagem1", item.imagem1)
@@ -76,8 +75,8 @@ const EditarItem = () => {
     }, [item])
 
     const handleChange = (e) => {
-        const { nome, valor } = e.target;
-        setItem((prev) => ({ ...prev, [nome]: valor }));
+        const { item, valor } = e.target;
+        setItem((prev) => ({ ...prev, [item]: valor }));
     };
 
     const handleSave = async (e) => {
@@ -110,7 +109,7 @@ const EditarItem = () => {
                                 type="text"
                                 className="form-control"
                                 id="inputId"
-                                value={item.id}
+                                value={item?.id || ''}
                                 readOnly
                             />
                         </div>
@@ -120,8 +119,8 @@ const EditarItem = () => {
                                 type="text"
                                 className="form-control"
                                 id="inputValor"
-                                name="nome"
-                                value={item.categoria}
+                                name="categoria"
+                                value={valor.categoria || '' }
                                 onChange={mudar("categoria")}
                                
                             />
@@ -132,7 +131,7 @@ const EditarItem = () => {
                                 type="text"
                                 className="form-control"
                                 id="inputData"
-                                value={item.nome}
+                                value={valor.nome || ''}
                                 onChange={mudar("nome")}
                                 
                             />
@@ -144,7 +143,7 @@ const EditarItem = () => {
                                 className="form-control"
                                 id="inputEmail4"
                                 name="obs"
-                                value={item.descricao}
+                                value={valor.descricao || ''}
                                 onChange={mudar("descricao")}
                               
                             />
@@ -156,7 +155,7 @@ const EditarItem = () => {
                                 id="inputAcesso"
                                 className="form-control"
                                 name="item_id"
-                                value={item.textointrodutorio}
+                                value={valor.textointrodutorio || ''}
                                 onChange={mudar("textointrodutorio")}
                             
                             />
@@ -169,7 +168,7 @@ const EditarItem = () => {
                                 type="text"
                                 className="form-control"
                                 id="inputStatus"
-                                value={item.imagem}
+                                value={valor.imagem || ''}
                                 onChange={mudar("imagem")}
                                 
                             />
@@ -181,7 +180,7 @@ const EditarItem = () => {
                                 type="text"
                                 className="form-control"
                                 id="inputStatus"
-                                value={item.imagem1}
+                                value={valor.imagem1 || ''}
                                 onChange={mudar("imagem1")}
                                 
                             />
@@ -193,7 +192,7 @@ const EditarItem = () => {
                                 type="text"
                                 className="form-control"
                                 id="inputStatus"
-                                value={item.imagem2}
+                                value={valor.imagem2 || ''}
                                 onChange={mudar("imagem2")}
                                 
                                 
@@ -206,8 +205,8 @@ const EditarItem = () => {
                                 type="text"
                                 className="form-control"
                                 id="inputStatus"
-                                value={item.imagem1}
-                                onChange={mudar("imagem2")}
+                                value={valor.imagem1 || ''}
+                                onChange={mudar("imagem3")}
                                 
                             />
                         </div>
@@ -218,7 +217,7 @@ const EditarItem = () => {
                                 type="text"
                                 className="form-control"
                                 id="inputStatus"
-                                value={item.populacao}
+                                value={valor.populacao || ''}
                                 onChange={mudar("populacao")}
                                 
                             />
@@ -230,7 +229,7 @@ const EditarItem = () => {
                                 type="text"
                                 className="form-control"
                                 id="inputStatus"
-                                value={item.motivo}
+                                value={valor.motivo || ''}
                                 onChange={mudar("motivo")}
                                 
                             />
@@ -242,7 +241,7 @@ const EditarItem = () => {
                                 type="text"
                                 className="form-control"
                                 id="inputStatus"
-                                value={item.metadenome1}
+                                value={valor.metadenome1 || ''}
                                 onChange={mudar("metadenome1")}
                                 
                             />
@@ -254,7 +253,7 @@ const EditarItem = () => {
                                 type="text"
                                 className="form-control"
                                 id="inputStatus"
-                                value={item.metadenome2}
+                                value={valor.metadenome2 || ''}
                                 onChange={mudar("metadenome2")}
                                 
                             />
@@ -266,7 +265,7 @@ const EditarItem = () => {
                                 type="text"
                                 className="form-control"
                                 id="inputStatus"
-                                value={item.statusItem}
+                                value={valor.statusItem || ''}
                                 onChange={mudar("statusItem")}
                                 
                             />

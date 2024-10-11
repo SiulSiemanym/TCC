@@ -10,7 +10,7 @@ const TabelaItem = () => {
     const navigate = useNavigate();
 
     const goTo = () => {
-        navigate('/editaritem')
+        navigate(`/editaritem/${id}`)
     }
 
     const [itens, setItens] = useState([]);

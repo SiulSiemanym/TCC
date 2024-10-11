@@ -37,7 +37,7 @@ const update = async (id, data) => {
     }
 };
 
-const create = (data) => {
+const create = (id, data) => {
     const formData = new FormData();
     formData.append('categoria', data.categoria);
     formData.append('nome', data.nome);
