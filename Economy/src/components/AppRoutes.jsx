@@ -15,7 +15,7 @@ import Usuario from '../pages/tabela'
 import Item from '../pages/tabelaitem'
 import Doacao from '../pages/tabeladoacao'
 import Catalogo from '../pages/tabelacatalogo'
-import EsqueciSenha from '../pages/esquecisenha'
+import EsqueciSenha from '../pages/EsqueciSenha'
 import EditarUsuario from '../pages/editarusuario'
 import EditarDoacao from '../pages/editardoacao'
 import EditarItem from '../pages/editaritem'
@@ -23,7 +23,7 @@ import EditarCatalogo from '../pages/editarcatalogo'
 import ItemTabela from '../pages/tabelaitem'
 import CatalogoTabela from '../pages/tabelacatalogo'
 import DoacaoTabela from '../pages/tabeladoacao'
-
+import CriarItem from '../pages/criaritem'
 
 
 
@@ -55,6 +55,7 @@ const AppRoutes = () => {
         <Route path='/editardoacao/:id'  element={<EditarDoacao />}/>
         <Route path='/editaritem/:id'  element={<EditarItem />}/>
         <Route path='/editarcatalogo/:id'  element={<EditarCatalogo />}/>
+        <Route path='/criaritem' element={<CriarItem />} />
 
 
 

@@ -77,6 +77,9 @@ const Login = () => {
                                                     </div>
                                                 )}
                                             </div>
+                                            <Link to='/esquecisenha'>
+                                                    <h5 className={`${css.linknao}`}>Esqueceu a senha?</h5>
+                                                </Link>
                                             <div className="d-grid mb-2">
                                               
                                                 <button

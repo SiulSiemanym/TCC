@@ -72,3 +72,13 @@
     background-repeat: no-repeat;
     z-index: 0;
   }
+
+  .recebernome{
+    font-weight: bold;
+  }
+
+  .aumentarafonte{
+    font-size: 30px;
+    font-weight: bold;
+
+  }
