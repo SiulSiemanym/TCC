@@ -55,7 +55,7 @@ const TabelaItem = () => {
                                         <th scope="col">Imagem2</th>
                                         <th scope="col">Imagem3</th>
                                         <th scope="col">População</th>
-                                        <th scope="col">Motivo</th>
+                                        <th scope="col">Link de acesso:</th>
                                         <th scope="col">metadenome1</th>
                                         <th scope="col">metadenome2</th>
                                         <th scope="col">StatusItem</th>
@@ -70,12 +70,12 @@ const TabelaItem = () => {
                                             <td>{item.nome}</td>
                                             <td>{item.descricao}</td>
                                             <td>{item.textointrodutorio}</td>
-                                            <td>{item.imagem}</td>
-                                            <td>{item.imagem1}</td>
-                                            <td>{item.imagem2}</td>
-                                            <td>{item.imagem3}</td>
+                                            <td style={{ width: "40vw" }}><img className="w-100" src={item.imagem} alt="" /></td>
+                                            <td style={{width: "40vw"}}><img className="w-100" src={item.imagem1}/></td>
+                                            <td style={{width: "40vw"}}><img className="w-100" src={item.imagem2}/></td>
+                                            <td style={{width: "40vw"}}><img className="w-100" src={item.imagem3}/></td>
                                             <td>{item.populacao}</td>
-                                            <td>{item.motivo}</td>
+                                            <td>{item.link}</td>
                                             <td>{item.metadenome1}</td>
                                             <td>{item.metadenome2}</td>
                                             <td>{item.statusItem}</td>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Am from '../Css/animais.module.css';
 
-export default function Habitat({ Metadenome1, Metadenome2, Imagem1, Imagem2, Imagem3, Extensao, Motivo, textointrodutorio }) {
+export default function Habitat({ Metadenome1, Metadenome2, Imagem1, Imagem2, Imagem3, Extensao, Motivo, textointrodutorio, link }) {
   // Crie uma string ou id que represente o habitat
   const habitatNome = `${Metadenome1} ${Metadenome2}`;
 
@@ -58,7 +58,7 @@ export default function Habitat({ Metadenome1, Metadenome2, Imagem1, Imagem2, Im
                 {Motivo}
               </p>
               <br />
-              <Link to='/pagamento' state={{ habitat: habitatNome }}>
+                <Link to={`/${link}/pagamento`} state={{ habitat: habitatNome }}>
                 <button type="button" className="btn btn-secondary" style={{ width: "15%" }}>
                   Doar
                 </button>

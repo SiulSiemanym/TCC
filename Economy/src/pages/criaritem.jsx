@@ -23,6 +23,7 @@ const CriarItem = () => {
         metadenome1: "",
         metadenome2: "",
         statusItem: "",
+        link: "",
     };
 
     const { mudar, valor } = useForm(objectValues);
@@ -44,7 +45,7 @@ const CriarItem = () => {
         try {
             const resposta = await ItemService.create(valor);
             alert("Item criado com sucesso!");
-            navigate('/tabelaitem');
+            navigate('/itemtabela');
         } catch (error) {
             console.error("Erro ao criar:", error);
             alert("Erro ao criar item.");
@@ -155,12 +156,23 @@ const CriarItem = () => {
                             />
                         </div>
                         <div className="col-md-6">
-                            <label htmlFor="inputMotivo" className="form-label">Motivo:</label>
+                            <label htmlFor="inputMotivo" className="form-label">Link acesso:</label>
                             <input
                                 type="text"
                                 className="form-control"
-                                id="inputMotivo"
-                                name="motivo"
+                                id="inputLink"
+                                name="link"
+                                value={valor.link}
+                                onChange={mudar("link")}
+                            />
+                        </div>
+                        <div className="col-md-6">
+                            <label htmlFor="inputMotivo" className="form-label">motivo:</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="inputLink"
+                                name="link"
                                 value={valor.motivo}
                                 onChange={mudar("motivo")}
                             />

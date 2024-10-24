@@ -37,12 +37,12 @@ const AppRoutes = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/perfil' element={<Perfil />} />
         <Route path='/animais/:nome' element={<AnimalPagina />} />
+        <Route path='/habitats/:nome' element={<AnimalPagina categoria="Habitat" />} />
         <Route path='/animais' element={<CatalogAnimal />} />
         <Route path='/editarperfil' element={<EditarPerfil />} />
-        <Route path='/pagamento' element={<Pagamento />} />
+        <Route path='/:item/pagamento' element={<Pagamento />} />
         <Route path='/cadastro' element={<Cadastro />} />
-        <Route path='/habitats/:nome' element={<HabitatPagina />} />
-        <Route path='/habitats' element={<Habitats />} />
+        <Route path='/habitats' element={<CatalogAnimal  categoria='Habitat'/>} />
         <Route path='/usuariotabela' element={<Usuario />}/>
         <Route path='/itemtabela' element={<ItemTabela />}/>
         <Route path='/catalogotabela' element={<CatalogoTabela />}/>

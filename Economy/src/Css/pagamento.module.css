@@ -61,7 +61,8 @@
 }
 
 .sobe{
- position: fixed;
+ position: relative;
+ 
 }
 .backgroundimage {
     position: relative;

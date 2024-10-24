@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 
-export default (url) => {
+export default (url, dependencias = []) => {
     const [data, setData] = useState(null)
     const [carregando, setCarregando] = useState(true)
 
@@ -12,7 +12,7 @@ export default (url) => {
             setCarregando(false)
         }
         requisitar()
-    }, [])
+    }, [dependencias])
 
     return [data, carregando];
 }

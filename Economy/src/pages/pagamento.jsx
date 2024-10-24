@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import Css from "../Css/pagamento.module.css";
 import Menu from "../components/menu";
 import Pé from "../components/footer";
 import back from "../assets/Imagens/Inicio/fundo-branco-com-folhas-verdes-isoladas-nos-cantos-e-espaco-de-copia-no-meio_373887-273.jpg";
 import DoacaoService from '../services/DoacaoService';
+import useRequisitar from '../hooks/useRequisitar';
 
 const Pagamento = () => {
-  const location = useLocation();
-  const { animal, habitat } = location.state || {};
+  const { item: itemNome } = useParams();
+  const [item, carregando] = useRequisitar("economy/item/find/" + itemNome); 
   const [nome, setNome] = useState('');
   const [userId, setUserId] = useState('');
+  const [valor, setValor] = useState('');
+  const [obs, setObs] = useState('');
   const [nomeAviso, setNomeAviso] = useState(false);
-  const [animalAviso, setAnimalAviso] = useState(true);
+  const [valorAviso, setValorAviso] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,25 +32,26 @@ const Pagamento = () => {
     e.preventDefault();
     
     setNomeAviso(nome === '');
-    setAnimalAviso(!animal && !habitat);
+    setValorAviso(valor === '');
 
-    if (nome !== '' && (animal || habitat)) {
+    if (nome !== '' && valor !== '') {
       try {
         // Enviando os dados para o banco de dados
         await DoacaoService.create({
           nome,
-          userId,
-          animal,
-          habitat
+          valor,
+          obs: item?.nome, // O nome do animal ou habitat será salvo como observação
+          statusDoacao: 'PAGO',
+          usuario_id: userId
         });
 
         // Navegando para o Mercado Pago
         navigate(`/mercadoPagoLink`, { 
           state: { 
             nome, 
-            userId, 
-            animal, 
-            habitat 
+            valor, 
+            obs: item?.nome, 
+            userId 
           } 
         });
       } catch (error) {
@@ -97,7 +101,23 @@ const Pagamento = () => {
 
               <div className="mb-3">
                 <label className="form-label"><span className={Css.verde}>Você está</span><span className={`${Css.branco}`}> doando para:</span></label>
-                <p className={`${Css.recebernome} ${Css.aumentarafonte}`}>{animal || habitat}</p>
+                <p className={`${Css.recebernome} ${Css.aumentarafonte}`}>{item?.nome}</p>
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label"><span className={Css.verde}>Digite</span><span className={Css.branco}> o valor da doação:</span></label>
+                <input
+                  type="number"
+                  className={`form-control ${Css.recebernome}`}
+                  id="valor"
+                  value={valor}
+                  onChange={(e) => setValor(e.target.value)}
+                />
+                {valorAviso && (
+                  <p className={Css.nomeaviso} style={{ color: 'rgb(245, 84, 84)', fontWeight: 'bold', marginTop: '10px', textDecoration: 'underline' }}>
+                    Preencha este campo obrigatório!
+                  </p>
+                )}
               </div>
 
               <div className={Css.botoesalinhados}>

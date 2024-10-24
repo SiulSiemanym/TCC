@@ -25,6 +25,7 @@ const update = async (id, data) => {
         formData.append('metadenome1', data.metadenome1);
         formData.append('metadenome2', data.metadenome2);
         formData.append('statusItem', data.statusItem);
+   
 
 
        
@@ -49,9 +50,11 @@ const create = (data) => {
     formData.append('imagem3', data.imagem3);
     formData.append('populacao', data.populacao);
     formData.append('motivo', data.motivo);
+    formData.append('link', data.link);
     formData.append('metadenome1', data.metadenome1);
     formData.append('metadenome2', data.metadenome2);
     formData.append('statusItem', data.statusItem);
+    
 
     return http.mainInstance.post(API_URL + "create", formData);
 };

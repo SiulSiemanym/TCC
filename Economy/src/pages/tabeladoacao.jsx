@@ -51,7 +51,7 @@ const TabelaDoacao = () => {
                                     <th scope="col">Destinátario</th>
                                     <th scope="col">valor</th>
                                     <th scope="col">Nome do doador</th>
-                                    <th scope="col">Estatos da Doação</th>
+                                    <th scope="col">Status da Doação</th>
                                     <th scope="col">Abrir</th>
                                 </tr>
                             </thead>

@@ -1,21 +1,20 @@
 import { useEffect, useState } from "react"; 
+import { Link } from "react-router-dom"; // Importando Link
 import menu from "../Css/menu.module.css";
 import Imagem from "../assets/Imagens/Menu/Perfil.png";
 import Logo from "../assets/Imagens/Menu/Logo.png";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function Menu({ ativo }) {
   const [usuario, setUsuario] = useState(null);
 
   useEffect(() => {
-    // Buscar dados do usuário (incluindo imagem) no backend
     const fetchUsuario = async () => {
       try {
-        const usuarioJSON = localStorage.getItem("usuario"); // Acessa o usuário logado
+        const usuarioJSON = localStorage.getItem("usuario");
         const usuarioData = JSON.parse(usuarioJSON);
         const response = await axios.get(`http://localhost:8080/economy/usuario/findByEmail/${usuarioData.email}`);
-        setUsuario(response.data); // Definimos os dados do usuário, incluindo a imagem
+        setUsuario(response.data);
       } catch (error) {
         console.error("Erro ao buscar dados do usuário", error);
       }
@@ -74,5 +73,3 @@ export default function Menu({ ativo }) {
     </header>
   );
 }
-
-

@@ -49,7 +49,14 @@ export   const animais = [
       imagem: GirafaImg,
       descricao:  "Imagine um mundo onde a majestosa girafa não mais percorre as savanas africanas. Com sua graça e elegância únicas, esses animais estão em perigo. Sua doação pode garantir que programas de conservação continuem protegendo as girafas e seu habitat. Cada contribuição conta, cada gesto importa. Juntos, podemos estender nossos pescoços pela preservação dessas criaturas magníficas. ",
       categoria: "animal",
-      Metadenome1: "Gira", Metadenome2: "fas", Imagem1: GirafaImg, Imagem2: GirafaImg2, Imagem3: GirafaImg3, Populacao: "A população de girafas está em declínio, com estimativas indicando que existem entre 68.000 e 80.000 indivíduos na natureza. Elas foram classificadas como 'vulneráveis' pela União Internacional para a Conservação da Natureza (UICN) devido à perda de habitat e caça ilegal." , Motivo: "gay", textointrodutorio:"As girafas (Giraffa camelopardalis) são os animais terrestres mais altos, com seus pescoços longos que podem medir até 2 metros. Elas são conhecidas por suas manchas únicas e comportamento social, vivendo em grupos chamados de 'torres'.", Motivo: "Preservar as girafas é fundamental para manter a saúde dos ecossistemas africanos. Elas ajudam na dispersão de sementes e na manutenção da vegetação. Além disso, as girafas são um símbolo da vida selvagem da África e atraem turistas, contribuindo para a economia local e incentivando a conservação de habitats naturais. Proteger essas majestosas criaturas é essencial para garantir a biodiversidade e a saúde dos ecossistemas."
+      Metadenome1: "Gira", 
+      Metadenome2: "fas", 
+      Imagem1: GirafaImg, 
+      Imagem2: GirafaImg2, 
+      Imagem3: GirafaImg3, 
+      Populacao: "A população de girafas está em declínio, com estimativas indicando que existem entre 68.000 e 80.000 indivíduos na natureza. Elas foram classificadas como 'vulneráveis' pela União Internacional para a Conservação da Natureza (UICN) devido à perda de habitat e caça ilegal." , 
+      textointrodutorio:"As girafas (Giraffa camelopardalis) são os animais terrestres mais altos, com seus pescoços longos que podem medir até 2 metros. Elas são conhecidas por suas manchas únicas e comportamento social, vivendo em grupos chamados de 'torres'.", 
+      Motivo: "Preservar as girafas é fundamental para manter a saúde dos ecossistemas africanos. Elas ajudam na dispersão de sementes e na manutenção da vegetação. Além disso, as girafas são um símbolo da vida selvagem da África e atraem turistas, contribuindo para a economia local e incentivando a conservação de habitats naturais. Proteger essas majestosas criaturas é essencial para garantir a biodiversidade e a saúde dos ecossistemas."
     },
     {
       nome: "Arara Azul",
